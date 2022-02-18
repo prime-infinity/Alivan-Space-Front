@@ -26,7 +26,7 @@ function Wrapper() {
                 </div>
             </div>
             </div>
-            <div className="swiper-slide bg-cover" style={{backgroundImage: "url('https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/photo/home-2.jpg')" }}>
+            <div className="swiper-slide bg-cover bg-cover-abnor" style={{backgroundImage: "url('https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/photo/home-2.jpg')" }}>
             <div className="container-fluid px-lg-6 h-100">
                 <div className="row h-100 justify-content-center align-items-center text-center" data-swiper-parallax="-500">
                 <div className="col-lg-6">
