@@ -11,7 +11,7 @@ function Header() {
                 <span className="navbarToggler"><span></span><span></span><span></span></span>
             </div>
             
-            <div className="classy-menu mt-auto">
+            <div className="classy-menu">
               
                 <div className="classycloseIcon">
                     <div className="cross-wrap"><span className="top"></span><span className="bottom"></span></div>
