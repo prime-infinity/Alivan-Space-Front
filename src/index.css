@@ -60,3 +60,29 @@
   right: 30px;
   left: auto;
 }
+.py-6 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+@media (min-width: 992px) {
+  .banner {
+    min-height: 400px;
+  }
+}
+@media (min-width: 576px) {
+  .banner {
+    height: 250px;
+  }
+}
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+.banner .banner-bg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 100%;
+  text-align: center;
+}
