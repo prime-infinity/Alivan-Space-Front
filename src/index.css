@@ -79,10 +79,26 @@
   overflow: hidden;
   height: 250px;
 }
+
 .banner .banner-bg {
   position: absolute;
   bottom: 0;
   width: 100%;
-  max-height: 100%;
+  max-height: 70%;
   text-align: center;
+}
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+.text-dark {
+  color: #212529 !important;
+}
+a {
+  text-decoration: none;
+}
+.btn-link {
+  font-weight: 400;
+  color: #bcac76;
+  text-decoration: none;
 }
