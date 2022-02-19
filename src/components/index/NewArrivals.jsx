@@ -20,440 +20,553 @@ function NewArrivals() {
         
         <div className="row">
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-label-boxed py-1 rounded-pill small fw-normal bg-white text-dark">Fresh</div>
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0987188250_1_1_1.jpg" alt="product" data-id="product4_color1" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
-
-                            </span>
-                        
-                        </a>
+                    <div className="product-image mb-md-3">
 
                         
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                        <a href="/#">
+                            <div className="product-swap-image">
+
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0950354513_1_1_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0950354513_2_1_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
-                            
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="/#">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">White Tee</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0">
-                        <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Select options</a>
-                    </div>
-                    <ul className="list-inline mb-0">
-                    <li className="list-inline-item me-0">
-                        <input className="product-color-input d-none" id="product4_color1" type="radio" name="product4_product1colors" />
-                        <label className="product-color" htmlFor="product4_color1" data-id="product4_color1" style={{background: "#7067f2"}} data-img="img/product/0987188250_1_1_1.jpg"></label>
-                    </li>
-                    <li className="list-inline-item">
-                        <input className="product-color-input d-none" id="product4_color2" type="radio" name="product4_product1colors" />
-                        <label className="product-color alt-img" htmlFor="product4_color2" data-id="product4_color2" style={{background: "#a0cfff"}} data-img="img/product/0987188250_2_1_1.jpg"></label>
-                    </li>
-                    </ul>
-                </div>
-                </div>
+
             </div>
-            </div>
+
+
             {/* /product*/}
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0950354513_1_1_1.jpg" alt="product" data-id="product4_color2" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
+                    <div className="product-image mb-md-3">
 
-                            </span>
+                        <div className="product-label-boxed mt-3 ms-3 py-1 rounded-pill small fw-normal bg-white text-dark">Sale</div>
                         
-                        </a>
+                        <a href="/#">
+                            <div className="product-swap-image">
 
-                        
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/5161335400_1_1_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/5161335400_2_3_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">Black blouse</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0"><span>$40.00</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Add to cart</a>
-                    </div>
-                </div>
-                </div>
+
             </div>
-            </div>
+
+
             {/* /product*/}
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-label-boxed py-1 rounded-pill small fw-normal bg-white text-dark">Sale</div>
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/5161335400_1_1_1.jpg" alt="product" data-id="product4_color3" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
-
-                            </span>
+                    <div className="product-image mb-md-3">
                         
-                        </a>
+                        <a href="detail-1.html">
+                            <div className="product-swap-image">
 
-                        
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0987188250_1_1_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0987188250_2_1_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">College jacket</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0">
-                        <s className="me-2 text-gray-500">$30.00</s><span>$15.00</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Select options</a>
-                    </div>
-                    <ul className="list-inline mb-0">
-                    <li className="list-inline-item me-0">
-                        <input className="product-color-input d-none" id="product4_color3" type="radio" name="product4_product3colors" />
-                        <label className="product-color" htmlFor="product4_color3" data-id="product4_color3" style={{background: "#72a6b6"}} data-img="img/product/5161335400_1_1_1.jpg"></label>
-                    </li>
-                    <li className="list-inline-item">
-                        <input className="product-color-input d-none" id="product4_color4" type="radio" name="product4_product3colors" />
-                        <label className="product-color alt-img" htmlFor="product4_color4" data-id="product4_color4" style={{background: "#7ede9a"}} data-img="img/product/5161335400_2_3_1.jpg"></label>
-                    </li>
-                    </ul>
-                </div>
-                </div>
+
             </div>
-            </div>
+
             {/* /product*/}
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0027211800_1_2_1.jpg" alt="product" data-id="product4_color4" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
+                    <div className="product-image mb-md-3">
 
-                            </span>
+                        <div className="product-label-boxed mt-3 ms-3 py-1 rounded-pill small fw-normal bg-white text-dark">Sold out</div>
                         
-                        </a>
+                        <a href="detail-1.html">
+                            <div className="product-swap-image">
 
-                        
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0987188250_1_1_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0987188250_2_1_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">Carrot-fit jeans</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0"><span>$60.00</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Select options</a>
-                    </div>
-                    <ul className="list-inline mb-0">
-                    <li className="list-inline-item me-0">
-                        <input className="product-color-input d-none" id="product4_color4" type="radio" name="product4_product4colors" />
-                        <label className="product-color" htmlFor="product4_color4" data-id="product4_color4" style={{background: "#414c54"}} data-img="img/product/0027211800_1_2_1.jpg"></label>
-                    </li>
-                    <li className="list-inline-item">
-                        <input className="product-color-input d-none" id="product4_color5" type="radio" name="product4_product4colors" />
-                        <label className="product-color alt-img" htmlFor="product4_color5" data-id="product4_color5" style={{background: "#85e4ec"}} data-img="img/product/0027211800_2_1_1.jpg"></label>
-                    </li>
-                    </ul>
-                </div>
-                </div>
+
             </div>
-            </div>
+
             {/* /product*/}
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0144074800_1_1_1.jpg" alt="product" data-id="product4_color5" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
+                    <div className="product-image mb-md-3">
 
-                            </span>
+                        <div className="product-label-boxed mt-3 ms-3 py-1 rounded-pill small fw-normal bg-white text-dark">Fresh</div>
                         
-                        </a>
+                        <a href="detail-1.html">
+                            <div className="product-swap-image">
 
-                        
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0987188250_1_1_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0987188250_2_1_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">Striped T-Shirt</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0"><span>$30.99</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Add to cart</a>
-                    </div>
-                </div>
-                </div>
+
             </div>
-            </div>
+
             {/* /product*/}
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-label-boxed py-1 rounded-pill small fw-normal bg-white text-dark">Sold out</div>
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0693492802_1_1_1.jpg" alt="product" data-id="product4_color6" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
-
-                            </span>
+                    <div className="product-image mb-md-3">
                         
-                        </a>
+                        <a href="detail-1.html">
+                            <div className="product-swap-image">
 
-                        
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/5806513505_1_2_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/5806513505_2_1_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">Short top</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0">
-                        <s className="me-2 text-gray-500">$40.00</s><span>$16.00</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Select options</a>
-                    </div>
-                    <ul className="list-inline mb-0">
-                    <li className="list-inline-item me-0">
-                        <input className="product-color-input d-none" id="product4_color6" type="radio" name="product4_product6colors" />
-                        <label className="product-color" htmlFor="product4_color6" data-id="product4_color6" style={{background: "#f394f3"}} data-img="img/product/0693492802_1_1_1.jpg"></label>
-                    </li>
-                    <li className="list-inline-item">
-                        <input className="product-color-input d-none" id="product4_color7" type="radio" name="product4_product6colors" />
-                        <label className="product-color alt-img" htmlFor="product4_color7" data-id="product4_color7" style={{background: "#1cc768"}} data-img="img/product/0693492802_2_1_1.jpg"></label>
-                    </li>
-                    </ul>
-                </div>
-                </div>
+
             </div>
-            </div>
+
+
             {/* /product*/}
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-label-boxed py-1 rounded-pill small fw-normal bg-white text-dark">Sold out</div>
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0364326148_1_1_1.jpg" alt="product" data-id="product4_color7" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
+                    <div className="product-image mb-md-3">
 
-                            </span>
+                        <div className="product-label-boxed mt-3 ms-3 py-1 rounded-pill small fw-normal bg-white text-dark">Fresh</div>
                         
-                        </a>
+                        <a href="detail-1.html">
+                            <div className="product-swap-image">
 
-                        
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0931168712_1_1_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0931168712_2_1_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">Ethnic Sweater</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0">
-                        <s className="me-2 text-gray-500">$40.00</s><span>$30.00</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Select options</a>
-                    </div>
-                    <ul className="list-inline mb-0">
-                    <li className="list-inline-item me-0">
-                        <input className="product-color-input d-none" id="product4_color7" type="radio" name="product4_product7colors" />
-                        <label className="product-color" htmlFor="product4_color7" data-id="product4_color7" style={{background: "#d8e8e8"}} data-img="img/product/0364326148_1_1_1.jpg"></label>
-                    </li>
-                    <li className="list-inline-item">
-                        <input className="product-color-input d-none" id="product4_color8" type="radio" name="product4_product7colors" />
-                        <label className="product-color alt-img" htmlFor="product4_color8" data-id="product4_color8" style={{background: "#7ede9a"}} data-img="img/product/0364326148_2_1_1.jpg"></label>
-                    </li>
-                    </ul>
-                </div>
-                </div>
+
             </div>
-            </div>
+
+
             {/* /product*/}
             {/* product type 4*/}
-            <div className="col-xl-3 col-md-4 col-6">
-            <div className="product product-type-4">
-                <div className="product-image overflow-hidden border-0">
-                <div className="product-img-holder position-relative"><img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0931168712_1_1_1.jpg" alt="product" data-id="product4_color8" /></div>
-                <div className="product-hover-overlay"><a className="product-hover-overlay-link" href="/#"></a>
-                    <div className="product-hover-overlay-buttons">
-                    <div className="btn-group shadow">
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+            <div className="col-xl-3 col-sm-4 col-6">
 
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Quick View">
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                </svg>
-
-                            </span>
+                    <div className="product-image mb-md-3">
                         
-                        </a>
+                        <a href="detail-1.html">
+                            <div className="product-swap-image">
 
-                        
-                        <a className="btn btn-light btn-lg bg-white p-0 border-0" href="/#">
-                            <span className="d-block p-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Add to Wishlist">
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0693492802_1_1_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0693492802_2_1_1.jpg" alt="product"/>
                                 
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                            </div>
 
-                            </span>
                         </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
                     </div>
-                    </div>
+
                 </div>
-                </div>
-                <div className="py-3">
-                <h3 className="h6 mb-1"> <a className="text-dark" href="detail-1.html">Beige</a></h3>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div className="product-info-action">
-                    <p className="product-price d-flex align-items-center text-muted mb-0"><span>$40.00</span>
-                    </p><a className="btn btn-link product-link" href="#!">
-                        Add to cart</a>
-                    </div>
-                </div>
-                </div>
+
             </div>
+
+
+
+            <div className="col-xl-3 col-sm-4 col-6">
+
+                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+
+                    <div className="product-image mb-md-3">
+                        
+                        <a href="detail-1.html">
+                            <div className="product-swap-image">
+
+                                <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0027211800_1_2_1.jpg" alt="product"/>
+                                <img className="img-fluid" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0027211800_2_1_1.jpg" alt="product"/>
+                                
+                            </div>
+
+                        </a>
+
+                        <div className="product-hover-overlay">
+
+                            <a className="text-dark text-sm" href="/#">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg><span className="d-none d-sm-inline">Add to cart</span>
+                            </a>
+
+                            <div>
+                                
+                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </a>
+
+                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        </div>
+
+                        <div className="position-relative">
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <p className="text-gray-600 text-sm"> 
+                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                            </p>
+                        <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
+
+                    </div>
+
+                </div>
+
             </div>
+            
+
+
+
+
+
             {/* /product*/}
         </div>
         {/* Quickview Modal    */}
@@ -465,8 +578,7 @@ function NewArrivals() {
                 <div className="row">
                     <div className="col-lg-6">
                     <div className="detail-carousel">
-                        <div className="product-badge badge bg-primary">Fresh</div>
-                        <div className="product-badge badge bg-dark">Sale</div>
+                        <div className="product-label-boxed mt-3 ms-3 py-1 rounded-pill small fw-normal bg-white text-dark">Fresh</div>
                         <div className="swiper swiper-container quickview-slider" id="quickViewSlider">
                         {/* Additional required wrapper*/}
                         <div className="swiper-wrapper">
@@ -539,14 +651,14 @@ function NewArrivals() {
                         <div className="col-6"><a href="/#"> <i className="far fa-heart me-2"></i>Add to wishlist </a></div>
                         <div className="col-6 text-end">
                             <ul className="list-inline mb-0">
-                            <li className="list-inline-item me-2"><a className="text-dark text-primary-hover" href="#"><i className="fab fa-facebook-f"> </i></a></li>
-                            <li className="list-inline-item"><a className="text-dark text-primary-hover" href="#"><i className="fab fa-twitter"> </i></a></li>
+                            <li className="list-inline-item me-2"><a className="text-dark text-primary-hover" href="/#"><i className="fab fa-facebook-f"> </i></a></li>
+                            <li className="list-inline-item"><a className="text-dark text-primary-hover" href="/#"><i className="fab fa-twitter"> </i></a></li>
                             </ul>
                         </div>
                         </div>
                         <ul className="list-unstyled">
-                        <li><strong>Category:</strong> <a className="text-muted" href="#">Jeans</a></li>
-                        <li><strong>Tags:</strong> <a className="text-muted" href="#">Leisure</a>, <a className="text-muted" href="#">Elegant</a></li>
+                        <li><strong>Category:</strong> <a className="text-muted" href="/#">Jeans</a></li>
+                        <li><strong>Tags:</strong> <a className="text-muted" href="/#">Leisure</a>, <a className="text-muted" href="/#">Elegant</a></li>
                         </ul>
                     </form>
                     </div>
