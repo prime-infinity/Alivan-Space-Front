@@ -1,4 +1,4 @@
-//import Header from "../components/index/Header"
+import Header from "../components/index/Header"
 import Categories from "../components/index/Categories"
 import Footer from "../components/index/Footer"
 import Info from "../components/index/Info"
@@ -8,7 +8,7 @@ import Wrapper from "../components/index/Wrapper"
 const Index = () => {
     return(
         <div>
-            {/*<Header />*/}
+            <Header />
             <Wrapper />
             <Categories />
             <NewArrivals />

@@ -113,7 +113,7 @@ function Footer() {
         <div className="container">
           <div className="row align-items-center text-sm text-gray-500">
             <div className="col-lg-4 text-center text-lg-start">
-              <p className="mb-lg-0">� 2022, Your company.  All rights reserved.</p>
+              <p className="mb-lg-0"> &copy; 2022, Alivan Space.  All rights reserved.</p>
             </div>
             <div className="col-lg-8">
               <ul className="list-inline mb-0 mt-2 mt-md-0 text-center text-lg-end">

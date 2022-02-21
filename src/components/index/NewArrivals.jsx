@@ -22,7 +22,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
 
@@ -66,9 +66,9 @@ function NewArrivals() {
                         </div>
 
                         <div className="position-relative">
-                            <h3 className="text-base mb-1"><a className="text-dark" href="/#">White Tee</a></h3>
+                            <h3 className="text-base mb-1"><a className="text-dark" href="/#">Black Blouse</a></h3>
                             <p className="text-gray-600 text-sm"> 
-                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                                <span>$40.00</span>
                             </p>
                         <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
 
@@ -83,7 +83,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
 
@@ -128,9 +128,9 @@ function NewArrivals() {
                         </div>
 
                         <div className="position-relative">
-                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">Crop Tops</a></h3>
                             <p className="text-gray-600 text-sm"> 
-                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                                <span>$20.00</span>
                             </p>
                         <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
 
@@ -145,7 +145,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
                         
@@ -188,9 +188,9 @@ function NewArrivals() {
                         </div>
 
                         <div className="position-relative">
-                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">Linear Shirts</a></h3>
                             <p className="text-gray-600 text-sm"> 
-                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                                <s className="me-2 text-gray-500">$70.00</s><span>$50.00</span>
                             </p>
                         <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
 
@@ -204,7 +204,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
 
@@ -265,7 +265,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
 
@@ -326,7 +326,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
                         
@@ -369,9 +369,9 @@ function NewArrivals() {
                         </div>
 
                         <div className="position-relative">
-                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">plain Shirts</a></h3>
                             <p className="text-gray-600 text-sm"> 
-                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                                <span>$100.00</span>
                             </p>
                         <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
 
@@ -386,7 +386,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
 
@@ -431,9 +431,9 @@ function NewArrivals() {
                         </div>
 
                         <div className="position-relative">
-                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">Jump suits</a></h3>
                             <p className="text-gray-600 text-sm"> 
-                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                                <s className="me-2 text-gray-500">$140.00</s><span>$120.00</span>
                             </p>
                         <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
 
@@ -448,7 +448,7 @@ function NewArrivals() {
             {/* product type 4*/}
             <div className="col-xl-3 col-sm-4 col-6">
 
-                <div className="product product-type-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="0">
+                <div className="product product-type-0">
 
                     <div className="product-image mb-md-3">
                         
@@ -491,9 +491,9 @@ function NewArrivals() {
                         </div>
 
                         <div className="position-relative">
-                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">White Tee</a></h3>
+                            <h3 className="text-base mb-1"><a className="text-dark" href="detail-1.html">Overalls</a></h3>
                             <p className="text-gray-600 text-sm"> 
-                                <s className="me-2 text-gray-500">$40.00</s><span>$20.00</span>
+                                <span>$70.00</span>
                             </p>
                         <div className="product-stars text-xs"><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-primary"></i><i className="fa fa-star text-muted"></i><i className="fa fa-star text-muted"></i></div>
 
