@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function NewArrivals() {
     return ( 
         <div className="container py-6">
@@ -8,14 +9,14 @@ function NewArrivals() {
         <div className="row justify-content-between align-items-center mb-4">
             <div className="col-12 col-md-8">
             <ul className="list-inline text-center text-md-start mb-3 mb-md-0"> 
-                <li className="list-inline-item"><a className="text-dark" href="/#">All Products </a></li>
-                <li className="list-inline-item"><a className="text-muted text-dark-hover" href="/#">Clothing </a></li>
-                <li className="list-inline-item"><a className="text-muted text-dark-hover" href="/#">Bags</a></li>
-                <li className="list-inline-item"><a className="text-muted text-dark-hover" href="/#">Shoes</a></li>
-                <li className="list-inline-item"><a className="text-muted text-dark-hover" href="/#">Accessories</a></li>
+                <li className="list-inline-item"><a className="text-dark">All Products </a></li>
+                <li className="list-inline-item"><a className="text-muted text-dark-hover" >Clothing </a></li>
+                <li className="list-inline-item"><a className="text-muted text-dark-hover" >Bags</a></li>
+                <li className="list-inline-item"><a className="text-muted text-dark-hover" >Shoes</a></li>
+                <li className="list-inline-item"><a className="text-muted text-dark-hover" >Accessories</a></li>
             </ul>
             </div>
-            <div className="col-12 col-md-auto text-center"><a className="btn btn-link px-0" href="/#">All products</a></div>
+            <div className="col-12 col-md-auto text-center"><a className="btn btn-link px-0" >All products</a></div>
         </div>
         
         <div className="row">
@@ -27,7 +28,7 @@ function NewArrivals() {
                     <div className="product-image mb-md-3">
 
                         
-                        <a href="/#">
+                        <a >
                             <div className="product-swap-image">
 
                                 <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/0950354513_1_1_1.jpg" alt="product"/>
@@ -39,7 +40,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -47,13 +48,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -66,7 +67,7 @@ function NewArrivals() {
                         </div>
 
                         <div className="position-relative">
-                            <h3 className="text-base mb-1"><a className="text-dark" href="/#">Black Blouse</a></h3>
+                            <h3 className="text-base mb-1"><a className="text-dark" >Black Blouse</a></h3>
                             <p className="text-gray-600 text-sm"> 
                                 <span>$40.00</span>
                             </p>
@@ -89,7 +90,7 @@ function NewArrivals() {
 
                         <div className="product-label-boxed mt-3 ms-3 py-1 rounded-pill small fw-normal bg-white text-dark">Sale</div>
                         
-                        <a href="/#">
+                        <a >
                             <div className="product-swap-image">
 
                                 <img className="img-fluid product-swap-image-front" src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/5161335400_1_1_1.jpg" alt="product"/>
@@ -101,7 +102,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -109,13 +110,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -161,7 +162,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -169,13 +170,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -222,7 +223,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -230,13 +231,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -283,7 +284,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -291,13 +292,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -342,7 +343,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -350,13 +351,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -404,7 +405,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -412,13 +413,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -464,7 +465,7 @@ function NewArrivals() {
 
                         <div className="product-hover-overlay">
 
-                            <a className="text-dark text-sm" href="/#">
+                            <a className="text-dark text-sm" >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg><span className="d-none d-sm-inline">Add to cart</span>
@@ -472,13 +473,13 @@ function NewArrivals() {
 
                             <div>
                                 
-                                <a className="text-dark text-primary-hover me-2" href="/#">
+                                <a className="text-dark text-primary-hover me-2" >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-heavy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </a>
 
-                                <a className="text-dark text-primary-hover text-decoration-none" href="/#" data-bs-toggle="modal" data-bs-target="#quickView">
+                                <a className="text-dark text-primary-hover text-decoration-none"  data-bs-toggle="modal" data-bs-target="#quickView">
                                     
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 svg-icon svg-icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -585,17 +586,17 @@ function NewArrivals() {
                         </div>
                         </div>
                         <div className="row mb-4">
-                        <div className="col-6"><a href="/#"> <i className="far fa-heart me-2"></i>Add to wishlist </a></div>
+                        <div className="col-6"><a > <i className="far fa-heart me-2"></i>Add to wishlist </a></div>
                         <div className="col-6 text-end">
                             <ul className="list-inline mb-0">
-                            <li className="list-inline-item me-2"><a className="text-dark text-primary-hover" href="/#"><i className="fab fa-facebook-f"> </i></a></li>
-                            <li className="list-inline-item"><a className="text-dark text-primary-hover" href="/#"><i className="fab fa-twitter"> </i></a></li>
+                            <li className="list-inline-item me-2"><a className="text-dark text-primary-hover" ><i className="fab fa-facebook-f"> </i></a></li>
+                            <li className="list-inline-item"><a className="text-dark text-primary-hover" ><i className="fab fa-twitter"> </i></a></li>
                             </ul>
                         </div>
                         </div>
                         <ul className="list-unstyled">
-                        <li><strong>Category:</strong> <a className="text-muted" href="/#">Jeans</a></li>
-                        <li><strong>Tags:</strong> <a className="text-muted" href="/#">Leisure</a>, <a className="text-muted" href="/#">Elegant</a></li>
+                        <li><strong>Category:</strong> <a className="text-muted" >Jeans</a></li>
+                        <li><strong>Tags:</strong> <a className="text-muted" >Leisure</a>, <a className="text-muted" >Elegant</a></li>
                         </ul>
                     </form>
                     </div>
