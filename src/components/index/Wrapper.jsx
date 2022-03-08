@@ -31,9 +31,7 @@ function Wrapper() {
                   The bedding was hardly able to cover it and seemed ready to
                   slide off any moment. His many legs, pit
                 </p>
-                <a className="btn btn-dark">
-                  Discover more
-                </a>
+                <a className="btn btn-dark">Discover more</a>
               </div>
             </div>
           </div>
@@ -61,9 +59,7 @@ function Wrapper() {
                   The bedding was hardly able to cover it and seemed ready to
                   slide off any moment. His many legs, pit
                 </p>
-                <a className="btn btn-dark">
-                  Discover more
-                </a>
+                <a className="btn btn-dark">Discover more</a>
               </div>
             </div>
           </div>
@@ -87,9 +83,7 @@ function Wrapper() {
                 <h2 className="display-3" style={{ lineHeight: "1" }}>
                   Linen and denim
                 </h2>
-                <a className="btn btn-dark">
-                  Start shopping
-                </a>
+                <a className="btn btn-dark">Start shopping</a>
               </div>
             </div>
           </div>
