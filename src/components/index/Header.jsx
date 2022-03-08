@@ -3,7 +3,7 @@ import { login, register } from "../../helpers/auth";
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { setAuth } from "../../redux/slices/authSlice";
+import { setAuth, saveAuthToLocal } from "../../redux/slices/authSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Header() {
@@ -18,6 +18,66 @@ function Header() {
   });
 
   const errorDiv = <small className="text-danger">{error}</small>;
+  const loginIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${
+        authState ? "theme-text-color" : ""
+      } h-5 w-5 svg-icon navbar-icon`}
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+  const wishListIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-5 w-5 svg-icon navbar-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+  const sideCartIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-5 w-5 svg-icon navbar-icon"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+  const menuIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 svg-icon navbar-icon"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M4 6h16M4 12h8m-8 6h16"
+      />
+    </svg>
+  );
 
   const handleErrors = (e) => {
     e.response?.data ? setErrors(e.response.data) : setErrors(e.message);
@@ -25,6 +85,8 @@ function Header() {
 
   const handleSuccess = (e) => {
     console.log("success", e);
+    dispatch(setAuth(e));
+    saveAuthToLocal();
   };
 
   const loginUser = (e) => {
@@ -65,57 +127,28 @@ function Header() {
                 data-bs-toggle="modal"
                 data-bs-target="#loginModal"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 svg-icon navbar-icon"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                {loginIcon}
               </a>
             </li>
             <li className="list-inline-item me-3">
-              <a className="text-dark text-primary-hover position-relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 svg-icon navbar-icon"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                {/*<div className="navbar-icon-badge">3</div>*/}
-              </a>
+              {authState !== null ? (
+                <a className="text-dark text-primary-hover position-relative">
+                  {wishListIcon}
+                  {/*<div className="navbar-icon-badge">3</div>*/}
+                </a>
+              ) : null}
             </li>
             <li className="list-inline-item position-relative me-3">
-              <a
-                className="text-dark text-primary-hover"
-                data-bs-toggle="modal"
-                data-bs-target="#sidebarCart"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 svg-icon navbar-icon"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+              {authState !== null ? (
+                <a
+                  className="text-dark text-primary-hover"
+                  data-bs-toggle="modal"
+                  data-bs-target="#sidebarCart"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                {/*<div className="navbar-icon-badge">5</div>*/}
-              </a>
+                  {sideCartIcon}
+                  {/*<div className="navbar-icon-badge">5</div>*/}
+                </a>
+              ) : null}
             </li>
           </ul>
           <button
@@ -127,37 +160,18 @@ function Header() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 svg-icon navbar-icon"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
+            {menuIcon}
           </button>
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav mt-3 mt-lg-0">
               <li className="nav-item dropdown active">
-                <a className="nav-link " href="/#">
-                  Home
-                </a>
+                <a className="nav-link ">Home</a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link " href="/#">
-                  Shop
-                </a>
+                <a className="nav-link ">Shop</a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link " href="/#">
-                  Something
-                </a>
+                <a className="nav-link ">Something</a>
               </li>
             </ul>
             <form className="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0">
@@ -193,87 +207,39 @@ function Header() {
               <li className="list-inline-item me-3">
                 <a
                   className="text-dark text-primary-hover"
-                  href="/#"
                   data-bs-toggle="modal"
                   data-bs-target="#loginModal"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 svg-icon navbar-icon"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  {loginIcon}
                 </a>
               </li>
               <li className="list-inline-item me-3">
-                <a
-                  className="text-dark text-primary-hover position-relative"
-                  href="/#"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 svg-icon navbar-icon"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {/*<div className="navbar-icon-badge">3</div>*/}
-                </a>
+                {authState !== null ? (
+                  <a className="text-dark text-primary-hover position-relative">
+                    {wishListIcon}
+                    {/*<div className="navbar-icon-badge">3</div>*/}
+                  </a>
+                ) : null}
               </li>
               <li className="list-inline-item position-relative me-3">
-                <a
-                  className="text-dark text-primary-hover"
-                  href="/#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#sidebarCart"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 svg-icon navbar-icon"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+                {authState !== null ? (
+                  <a
+                    className="text-dark text-primary-hover"
+                    data-bs-toggle="modal"
+                    data-bs-target="#sidebarCart"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {/*<div className="navbar-icon-badge">5</div>*/}
-                </a>
+                    {sideCartIcon}
+                    {/*<div className="navbar-icon-badge">5</div>*/}
+                  </a>
+                ) : null}
               </li>
               <li className="list-inline-item">
                 <a
                   className="text-dark text-primary-hover"
-                  href="/#"
                   data-bs-toggle="modal"
                   data-bs-target="#sidebarRight"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 svg-icon navbar-icon"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h8m-8 6h16"
-                    />
-                  </svg>
+                  {menuIcon}
                 </a>
               </li>
             </ul>
