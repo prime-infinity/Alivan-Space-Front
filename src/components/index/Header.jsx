@@ -10,17 +10,27 @@ function Header() {
     password: "",
   });
 
+  const errorDiv = <small className="text-danger">{error}</small>;
+
+  const handleErrors = (e) => {
+    e.response?.data ? setErrors(e.response.data) : setErrors(e.message);
+  };
+
+  const handleSuccess = (e) => {
+    console.log("success", e);
+  };
+
   const loginUser = (e) => {
     e.preventDefault();
     setErrors(null);
 
-    login(formData)
+    const newForm = { email: formData.email, password: formData.password };
+    login(newForm)
       .then((res) => {
-        console.log(res);
+        handleSuccess(res);
       })
       .catch((err) => {
-        console.log(err);
-        setErrors(err);
+        handleErrors(err);
       });
   };
   const registerUser = (e) => {
@@ -29,11 +39,10 @@ function Header() {
 
     register(formData)
       .then((res) => {
-        console.log(res);
+        handleSuccess(res);
       })
       .catch((err) => {
-        console.log(err);
-        setErrors(err);
+        handleErrors(err);
       });
   };
 
@@ -381,9 +390,9 @@ function Header() {
                           </span>
                         </label>
                       </div>*/}
-                      {error ? (
-                        <small className="text-danger">{error}</small>
-                      ) : null}
+                      <div className="row text-center">
+                        <div className="col-12">{error ? errorDiv : null}</div>
+                      </div>
                     </div>
 
                     <div className="d-grid mb-3">
@@ -466,9 +475,9 @@ function Header() {
                           })
                         }
                       />
-                      {error ? (
-                        <small className="text-danger">{error}</small>
-                      ) : null}
+                      <div className="row text-center">
+                        <div className="col-12">{error ? errorDiv : null}</div>
+                      </div>
                     </div>
                     <div className="d-grid mb-3 text-center">
                       <button className="btn btn-outline-dark">
