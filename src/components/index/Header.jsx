@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { login, register } from "../../helpers/auth";
 
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { setAuth } from "../../redux/slices/authSlice";
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Header() {
+  const authState = useSelector((state) => state.auth.auth);
+  const dispatch = useDispatch();
+
   const [error, setErrors] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -285,6 +292,7 @@ function Header() {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <button
+              onClick={() => setErrors(null)}
               className="btn-close btn-close-absolute btn-close-lg btn-close-rotate"
               type="button"
               data-bs-dismiss="modal"
