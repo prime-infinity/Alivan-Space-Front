@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { login, register } from "../../helpers/auth";
+import { login, register } from "../helpers/auth";
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { setAuth, saveAuthToLocal } from "../../redux/slices/authSlice";
+import { setAuth, saveAuthToLocal } from "../redux/slices/authSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Header() {
@@ -217,7 +217,7 @@ function Header() {
             <ul className="list-inline mb-0 d-none d-lg-block">
               <li className="list-inline-item me-3">
                 {authState ? (
-                  <Link to="/home">{loginIcon}</Link>
+                  <Link to="/profile">{loginIcon}</Link>
                 ) : (
                   <a
                     className="text-dark text-primary-hover"
