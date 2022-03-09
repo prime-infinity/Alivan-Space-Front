@@ -16,6 +16,7 @@ export const authSlice = createSlice({
 export const getAuth = () => async (dispatch) => {
   const dataFromGet = await loadFromLocal();
   dispatch(setAuth(dataFromGet));
+  console.log("is getting auth");
 };
 
 export const saveAuthToLocal = () => (dispatch, getState) => {
