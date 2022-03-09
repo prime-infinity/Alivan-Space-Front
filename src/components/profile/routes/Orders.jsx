@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function ProfileOrders() {
   return (
-    <div className="col-lg-8 col-xl-9">
+    <div className="col-lg-8 col-xl-9" style={{ overflowX: "auto" }}>
       <table className="table table-hover table-responsive">
         <thead className="bg-light">
           <tr>

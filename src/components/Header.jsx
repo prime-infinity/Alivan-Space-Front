@@ -129,7 +129,7 @@ function Header() {
           <ul className="list-inline mb-0 d-block d-lg-none">
             <li className="list-inline-item me-3">
               {authState ? (
-                <Link to="/profile">{loginIcon}</Link>
+                <Link to="/profile/profile">{loginIcon}</Link>
               ) : (
                 <a
                   className="text-dark text-primary-hover"
