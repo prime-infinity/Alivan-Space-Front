@@ -11,7 +11,7 @@ function Profile() {
           {/*<!-- Breadcrumbs -->*/}
           <ol className="breadcrumb ps-0 ">
             <li className="breadcrumb-item">
-              <a href="index.html">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li className="breadcrumb-item active">Your profile </li>
           </ol>

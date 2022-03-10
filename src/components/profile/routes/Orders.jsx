@@ -21,12 +21,7 @@ function ProfileOrders() {
               <span className="badge badge-info-light">Being prepared</span>
             </td>
             <td className="py-5 align-middle">
-              <a
-                className="btn btn-outline-dark btn-sm"
-                href="customer-order.html"
-              >
-                View
-              </a>
+              <a className="btn btn-outline-dark btn-sm">View</a>
             </td>
           </tr>
           <tr>
