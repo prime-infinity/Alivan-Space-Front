@@ -93,6 +93,11 @@ function Header() {
       email: "",
       password: "",
     });
+
+    document.querySelectorAll(".modal-backdrop").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.body.style.overflowY = "scroll";
   };
 
   const loginUser = (e) => {

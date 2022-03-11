@@ -18,3 +18,7 @@ export const saveToLocal = (user) => {
     console.warn(e);
   }
 };
+
+export const removeFromLocal = () => {
+  localStorage.removeItem("alivanauth");
+};

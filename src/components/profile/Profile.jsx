@@ -1,8 +1,18 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "../../redux/slices/authSlice";
+import { removeFromLocal } from "../../helpers/controlStorage";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Profile() {
+  const authState = useSelector((state) => state.auth.auth);
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch(setAuth(null));
+    removeFromLocal();
+  };
 
   return (
     <div>
@@ -42,7 +52,7 @@ function Profile() {
                       alt=""
                     />
                   </a>
-                  <h5>Jane Doe</h5>
+                  <h5>{authState.name}</h5>
                   <p className="text-muted text-sm mb-0">Los Angeles, CA</p>
                 </div>
                 <nav className="list-group customer-nav">
@@ -146,7 +156,10 @@ function Profile() {
                       Wishlist
                     </span>
                   </Link>
-                  <a className="list-group-item d-flex justify-content-between align-items-center">
+                  <a
+                    className="list-group-item d-flex justify-content-between align-items-center"
+                    onClick={logout}
+                  >
                     <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
