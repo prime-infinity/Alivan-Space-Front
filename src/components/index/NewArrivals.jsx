@@ -222,9 +222,7 @@ function NewArrivals() {
 
             <div className="position-relative">
               <h3 className="text-base mb-1">
-                <a className="text-dark" href="detail-1.html">
-                  Crop Tops
-                </a>
+                <a className="text-dark">Crop Tops</a>
               </h3>
               <p className="text-gray-600 text-sm">
                 <span>$20.00</span>
@@ -245,7 +243,7 @@ function NewArrivals() {
         <div className="col-xl-3 col-sm-4 col-6">
           <div className="product product-type-0">
             <div className="product-image mb-md-3">
-              <a href="detail-1.html">
+              <a>
                 <div className="product-swap-image">
                   <img
                     className="img-fluid product-swap-image-front"
@@ -323,9 +321,7 @@ function NewArrivals() {
 
             <div className="position-relative">
               <h3 className="text-base mb-1">
-                <a className="text-dark" href="detail-1.html">
-                  Linear Shirts
-                </a>
+                <a className="text-dark">Linear Shirts</a>
               </h3>
               <p className="text-gray-600 text-sm">
                 <s className="me-2 text-gray-500">$70.00</s>
@@ -351,7 +347,7 @@ function NewArrivals() {
                 Sold out
               </div>
 
-              <a href="detail-1.html">
+              <a>
                 <div className="product-swap-image">
                   <img
                     className="img-fluid product-swap-image-front"
@@ -429,9 +425,7 @@ function NewArrivals() {
 
             <div className="position-relative">
               <h3 className="text-base mb-1">
-                <a className="text-dark" href="detail-1.html">
-                  White Tee
-                </a>
+                <a className="text-dark">White Tee</a>
               </h3>
               <p className="text-gray-600 text-sm">
                 <s className="me-2 text-gray-500">$40.00</s>
@@ -457,7 +451,7 @@ function NewArrivals() {
                 Fresh
               </div>
 
-              <a href="detail-1.html">
+              <a>
                 <div className="product-swap-image">
                   <img
                     className="img-fluid product-swap-image-front"
@@ -535,9 +529,7 @@ function NewArrivals() {
 
             <div className="position-relative">
               <h3 className="text-base mb-1">
-                <a className="text-dark" href="detail-1.html">
-                  White Tee
-                </a>
+                <a className="text-dark">White Tee</a>
               </h3>
               <p className="text-gray-600 text-sm">
                 <s className="me-2 text-gray-500">$40.00</s>
@@ -559,7 +551,7 @@ function NewArrivals() {
         <div className="col-xl-3 col-sm-4 col-6">
           <div className="product product-type-0">
             <div className="product-image mb-md-3">
-              <a href="detail-1.html">
+              <a>
                 <div className="product-swap-image">
                   <img
                     className="img-fluid product-swap-image-front"
@@ -637,9 +629,7 @@ function NewArrivals() {
 
             <div className="position-relative">
               <h3 className="text-base mb-1">
-                <a className="text-dark" href="detail-1.html">
-                  plain Shirts
-                </a>
+                <a className="text-dark">plain Shirts</a>
               </h3>
               <p className="text-gray-600 text-sm">
                 <span>$100.00</span>
@@ -664,7 +654,7 @@ function NewArrivals() {
                 Fresh
               </div>
 
-              <a href="detail-1.html">
+              <a>
                 <div className="product-swap-image">
                   <img
                     className="img-fluid product-swap-image-front"
@@ -742,9 +732,7 @@ function NewArrivals() {
 
             <div className="position-relative">
               <h3 className="text-base mb-1">
-                <a className="text-dark" href="detail-1.html">
-                  Jump suits
-                </a>
+                <a className="text-dark">Jump suits</a>
               </h3>
               <p className="text-gray-600 text-sm">
                 <s className="me-2 text-gray-500">$140.00</s>
@@ -766,7 +754,7 @@ function NewArrivals() {
         <div className="col-xl-3 col-sm-4 col-6">
           <div className="product product-type-0">
             <div className="product-image mb-md-3">
-              <a href="detail-1.html">
+              <a>
                 <div className="product-swap-image">
                   <img
                     className="img-fluid product-swap-image-front"
@@ -844,9 +832,7 @@ function NewArrivals() {
 
             <div className="position-relative">
               <h3 className="text-base mb-1">
-                <a className="text-dark" href="detail-1.html">
-                  Overalls
-                </a>
+                <a className="text-dark">Overalls</a>
               </h3>
               <p className="text-gray-600 text-sm">
                 <span>$70.00</span>

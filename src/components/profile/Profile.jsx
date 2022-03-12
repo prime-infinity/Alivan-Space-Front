@@ -2,10 +2,12 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from "../../redux/slices/authSlice";
 import { removeFromLocal } from "../../helpers/controlStorage";
+import { useEffect } from "react";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Profile() {
   const authState = useSelector((state) => state.auth.auth);
+  const userDetails = useSelector((state) => state.userdetails.details);
   const location = useLocation();
   const dispatch = useDispatch();
 
@@ -13,6 +15,11 @@ function Profile() {
     dispatch(setAuth(null));
     removeFromLocal();
   };
+
+  useEffect(() => {
+    console.log(" i am rendering");
+    console.log("userdetails is", userDetails);
+  }, [userDetails]);
 
   return (
     <div>
@@ -57,6 +64,30 @@ function Profile() {
                 </div>
                 <nav className="list-group customer-nav">
                   <Link
+                    to="profile"
+                    className={` ${
+                      location.pathname === "/profile/profile" ? "active" : ""
+                    } list-group-item d-flex justify-content-between align-items-center`}
+                  >
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 svg-icon  me-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                      Profile
+                    </span>
+                  </Link>
+                  <Link
                     to="orders"
                     className={` ${
                       location.pathname === "/profile/orders" ? "active" : ""
@@ -83,30 +114,6 @@ function Profile() {
                     <div className="badge rounded-pill bg-dark fw-normal px-3">
                       5
                     </div>
-                  </Link>
-                  <Link
-                    to="profile"
-                    className={` ${
-                      location.pathname === "/profile/profile" ? "active" : ""
-                    } list-group-item d-flex justify-content-between align-items-center`}
-                  >
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 svg-icon  me-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                      Profile
-                    </span>
                   </Link>
                   <Link
                     to="address"

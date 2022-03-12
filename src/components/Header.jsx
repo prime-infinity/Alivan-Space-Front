@@ -5,6 +5,7 @@ import { login, register } from "../helpers/auth";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { setAuth, saveAuthToLocal } from "../redux/slices/authSlice";
+import { setUserDetail } from "../redux/slices/userdetailsSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Header() {
@@ -87,6 +88,7 @@ function Header() {
   const handleSuccess = (e) => {
     dispatch(setAuth(e));
     dispatch(saveAuthToLocal());
+    dispatch(setUserDetail(e.token));
 
     setFormData({
       name: "",

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const backendHost = "http://localhost:5000/api/";
+const backendHost = "http://localhost:2000/api/";
 //const backendHost = 'https://reqres.in/api/'
 
 export function login(data) {
@@ -35,4 +35,8 @@ export function getUserFromLocal() {
     return null;
   }
   return JSON.parse(userStr);
+}
+
+export function getDetails(token) {
+  return { token: token };
 }
