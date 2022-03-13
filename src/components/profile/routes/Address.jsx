@@ -17,18 +17,7 @@ function ProfileAddress() {
               id="fullname_invoice"
             />
           </div>
-          <div className="mb-3 col-md-6">
-            <label className="form-label" htmlFor="emailaddress_invoice">
-              Email Address
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="emailaddress_invoice"
-              placeholder="joe.black@gmail.com"
-              id="emailaddress_invoice"
-            />
-          </div>
+
           <div className="mb-3 col-md-6">
             <label className="form-label" htmlFor="country_invoice">
               Country

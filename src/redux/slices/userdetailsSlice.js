@@ -16,9 +16,8 @@ export const userdetailsSlice = createSlice({
 export const { setDetails } = userdetailsSlice.actions;
 
 export const setUserDetail = (token) => async (dispatch) => {
-  const dataFromGet = getDetails(token);
+  const dataFromGet = await getDetails(token);
   dispatch(setDetails(dataFromGet));
-  console.log("is getting details");
 };
 
 export default userdetailsSlice.reducer;

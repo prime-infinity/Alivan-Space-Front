@@ -37,6 +37,13 @@ export function getUserFromLocal() {
   return JSON.parse(userStr);
 }
 
-export function getDetails(token) {
-  return { token: token };
+export async function getDetails(token) {
+  try {
+    const { data } = await axios.get(backendHost + "userdetails", {
+      headers: { "x-auth-token": token },
+    });
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }

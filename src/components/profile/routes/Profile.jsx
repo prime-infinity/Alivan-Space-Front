@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
 function ProfileProfile() {
+  const authState = useSelector((state) => state.auth.auth);
+
   return (
     <div className="col-lg-8 col-xl-9 mb-5 mb-lg-0">
       <h3 className="mb-5">Personal details</h3>
@@ -36,7 +39,13 @@ function ProfileProfile() {
               <label className="form-label" htmlFor="emailAccount">
                 Email
               </label>
-              <input className="form-control" id="emailAccount" type="text" />
+              <input
+                className="form-control"
+                value={authState.email}
+                id="emailAccount"
+                type="text"
+                onChange={() => console.log("email is changing")}
+              />
             </div>
           </div>
         </div>
