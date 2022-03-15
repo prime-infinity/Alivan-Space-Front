@@ -15,6 +15,8 @@ export const userdetailsSlice = createSlice({
 
 export const { setDetails } = userdetailsSlice.actions;
 
+//the following is called after login or register.
+//it should also be called by clicking the profile link
 export const setUserDetail = (token) => async (dispatch) => {
   const dataFromGet = await getDetails(token);
   dispatch(setDetails(dataFromGet));

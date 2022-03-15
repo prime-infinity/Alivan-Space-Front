@@ -2,7 +2,9 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from "../../redux/slices/authSlice";
 import { removeFromLocal } from "../../helpers/controlStorage";
+import Loading from "../../helpers/Loading";
 import { useEffect } from "react";
+import { setUserDetail } from "../../redux/slices/userdetailsSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Profile() {
@@ -17,9 +19,24 @@ function Profile() {
   };
 
   useEffect(() => {
-    console.log(" i am rendering");
+    if (userDetails === null) {
+      dispatch(setUserDetail(authState.token));
+    }
     console.log("userdetails is", userDetails);
-  }, [userDetails]);
+  }, [userDetails, dispatch, authState.token]);
+
+  const inProfile = () => {
+    return location.pathname === "/profile/profile" ? true : false;
+  };
+  const inOrders = () => {
+    return location.pathname === "/profile/orders" ? true : false;
+  };
+  const inAddress = () => {
+    return location.pathname === "/profile/address" ? true : false;
+  };
+  const inWishlist = () => {
+    return location.pathname === "/profile/wishlist" ? true : false;
+  };
 
   return (
     <div>
@@ -30,7 +47,17 @@ function Profile() {
             <li className="breadcrumb-item">
               <Link to="/">Home</Link>
             </li>
-            <li className="breadcrumb-item active">Your profile </li>
+            <li className="breadcrumb-item active">
+              {inProfile()
+                ? "Your profile"
+                : inOrders()
+                ? "Your orders"
+                : inAddress()
+                ? "Your address"
+                : inWishlist()
+                ? "Your wishlist"
+                : null}{" "}
+            </li>
           </ol>
           {/*<!-- Hero Content-->*/}
           <div className="hero-content">
@@ -60,7 +87,11 @@ function Profile() {
                     />
                   </a>
                   <h5>{authState.name}</h5>
-                  <p className="text-muted text-sm mb-0">Los Angeles, CA</p>
+                  <p className="text-muted text-sm mb-0">
+                    {userDetails?.address?.city
+                      ? `${userDetails.address.city},${userDetails.address.state}`
+                      : null}
+                  </p>
                 </div>
                 <nav className="list-group customer-nav">
                   <Link
@@ -189,11 +220,10 @@ function Profile() {
               </div>
             </div>
             {/*<!-- /Customer Sidebar-->*/}
-            <Outlet />
+            {userDetails !== null ? <Outlet /> : <Loading />}
           </div>
         </div>
       </section>
-      ;
     </div>
   );
 }

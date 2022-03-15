@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const backendHost = "http://localhost:2000/api/";
-//const backendHost = 'https://reqres.in/api/'
 
 export function login(data) {
   return new Promise((res, rej) => {
@@ -43,7 +42,37 @@ export async function getDetails(token) {
       headers: { "x-auth-token": token },
     });
     return data;
-  } catch (error) {
-    console.error(error);
+  } catch {
+    return null;
   }
+}
+
+export function submitUserDetails(details, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "userdetails", details, {
+        headers: { "x-auth-token": token },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
+
+export function submitUserAddress(details, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "userdetails/address", details, {
+        headers: { "x-auth-token": token },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
 }
