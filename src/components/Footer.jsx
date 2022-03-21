@@ -1,5 +1,17 @@
+import { useLocation } from "react-router-dom";
+
 function Footer() {
-  return (
+  const location = useLocation();
+  const notAllowed = () => {
+    return location.pathname === "/admin" ||
+      location.pathname === "/admin/orders" ||
+      location.pathname === "/admin/post" ||
+      location.pathname === "/admin/createcat"
+      ? true
+      : false;
+  };
+
+  return notAllowed() ? null : (
     <footer>
       <div className="py-5 py-lg-6 bg-gray-100">
         <div className="container">

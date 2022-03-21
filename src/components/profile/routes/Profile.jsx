@@ -22,7 +22,7 @@ function ProfileProfile() {
   };
 
   const handleSuccess = (e) => {
-    //dispatch(setDetails(e));
+    dispatch(setDetails(e));
     console.log(e);
   };
 

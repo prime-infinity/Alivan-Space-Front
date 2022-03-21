@@ -14,6 +14,12 @@ import ProfileOrders from "./components/profile/routes/Orders";
 import ProfileAddress from "./components/profile/routes/Address";
 import ProfileWishlist from "./components/profile/routes/Wishlist";
 
+//admin
+import Admin from "./components/admin/Admin";
+import AdminOrders from "./components/admin/routes/AdminOrders";
+import AdminCreateCat from "./components/admin/routes/AdminCreateCat";
+import AdminPost from "./components/admin/routes/AdminPost";
+
 import ProtectedRoute from "./helpers/protectedRoute";
 import { useEffect } from "react";
 
@@ -24,6 +30,7 @@ function App() {
   useEffect(() => {
     dispatch(getAuth());
   }, [dispatch]);
+
   return (
     <BrowserRouter>
       <Header />
@@ -44,6 +51,14 @@ function App() {
           <Route path="wishlist" element={<ProfileWishlist />} />
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Route>
+
+        {/**admin routes */}
+        <Route path="/admin" element={<Admin />}>
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="post" element={<AdminPost />} />
+          <Route path="createcat" element={<AdminCreateCat />} />
+        </Route>
+
         <Route path="*" element={<p>There's nothing here: 404!</p>} />
       </Routes>
       <Footer />
