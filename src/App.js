@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./views/Index";
 import "./index.css";
+import "./file-upload-with-preview.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth } from "./redux/slices/authSlice";
@@ -54,6 +55,7 @@ function App() {
 
         {/**admin routes */}
         <Route path="/admin" element={<Admin />}>
+          <Route index element={<AdminOrders />} />
           <Route path="orders" element={<AdminOrders />} />
           <Route path="post" element={<AdminPost />} />
           <Route path="createcat" element={<AdminCreateCat />} />

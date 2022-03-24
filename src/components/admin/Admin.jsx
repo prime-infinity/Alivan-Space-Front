@@ -1,23 +1,15 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { setAuth } from "../../redux/slices/authSlice";
-import { removeFromLocal } from "../../helpers/controlStorage";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Admin() {
   const authState = useSelector((state) => state.auth.auth);
   const location = useLocation();
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("auths state is", authState);
+    //console.log("auths state is", authState);
   }, [authState]);
-
-  const logout = () => {
-    dispatch(setAuth(null));
-    removeFromLocal();
-  };
 
   const inOrders = () => {
     return location.pathname === "/admin/orders" ? true : false;
@@ -138,29 +130,6 @@ function Admin() {
                       Create Category
                     </span>
                   </Link>
-
-                  <a
-                    className="list-group-item d-flex justify-content-between align-items-center"
-                    onClick={logout}
-                  >
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 svg-icon  me-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                        />
-                      </svg>
-                      Log out
-                    </span>
-                  </a>
                 </nav>
               </div>
             </div>

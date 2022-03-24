@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from "../../redux/slices/authSlice";
 import { removeFromLocal } from "../../helpers/controlStorage";
-import Loading from "../../helpers/Loading";
+import Loading from "../ui/Loading";
 import { useEffect } from "react";
 import { setUserDetail } from "../../redux/slices/userdetailsSlice";
 
@@ -192,6 +192,28 @@ function Profile() {
                         />
                       </svg>
                       Wishlist
+                    </span>
+                  </Link>
+                  <Link
+                    to="/admin/orders"
+                    className="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 svg-icon  me-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                      Admin
                     </span>
                   </Link>
                   <a

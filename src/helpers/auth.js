@@ -76,3 +76,30 @@ export function submitUserAddress(details, token) {
       });
   });
 }
+
+//admin routes
+export function createCategory(details, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "admin/savecategory", details, {
+        headers: { "x-auth-token": token },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
+
+//shop routes
+//get all shop categories
+export async function getCategories() {
+  try {
+    const { data } = await axios.get(backendHost + "shop/getcategories");
+    return data;
+  } catch {
+    return null;
+  }
+}
