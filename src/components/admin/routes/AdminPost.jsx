@@ -1,15 +1,21 @@
-//import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import FileUploadWithPreview from "file-upload-with-preview";
 import "file-upload-with-preview/dist/file-upload-with-preview.min.css";
+import Loading from "../../ui/Loading";
+import { sizes } from "../../../utils/sizes";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function AdminPost() {
   //const authState = useSelector((state) => state.auth.auth);
+  const categories = useSelector((state) => state.shop.categories);
   const [upload, setUpload] = useState(null);
   const [error, setErrors] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
+    sizes: [],
+    categories: [],
+    price: "",
   });
   const errorDiv = <small className="text-danger">{error}</small>;
   const submitDetails = (e) => {
@@ -17,6 +23,7 @@ function AdminPost() {
     setErrors(null);
 
     console.log(formData);
+    //console.log(upload.cachedFileArray);
   };
 
   useEffect(() => {
@@ -27,39 +34,45 @@ function AdminPost() {
     );
   }, []);
 
-  const check = () => {
-    console.log(upload.cachedFileArray);
+  function remove(arr, item) {
+    var index = arr.indexOf(item);
+    return [
+      // part of the array before the given item
+      ...arr.slice(0, index),
+
+      // part of the array after the given item
+      ...arr.slice(index + 1),
+    ];
+  }
+
+  const handleSizeOnChange = (e) => {
+    formData.sizes.includes(e.target.value)
+      ? setFormData({
+          ...formData,
+          sizes: remove(formData.sizes, e.target.value),
+        })
+      : setFormData({
+          ...formData,
+          sizes: [...formData.sizes, e.target.value],
+        });
+  };
+
+  const handleCatChange = (e) => {
+    formData.categories.includes(e.target.value)
+      ? setFormData({
+          ...formData,
+          categories: remove(formData.categories, e.target.value),
+        })
+      : setFormData({
+          ...formData,
+          categories: [...formData.categories, e.target.value],
+        });
   };
 
   return (
     <div className="col-lg-8 col-xl-9 mb-5 mb-lg-0">
       <div className="row">
-        <div className="col-12 col-md-5">
-          <form onSubmit={submitDetails}>
-            <h3 className="mb-4">Create Category</h3>
-            <div className="row">
-              <div className="mb-3">
-                <label className="form-label" htmlFor="country_invoice">
-                  Category Name
-                </label>
-                <input
-                  className="form-control"
-                  type="text"
-                  name="country_invoice"
-                  id="country_invoice"
-                />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">{error ? errorDiv : null}</div>
-            </div>
-            <div className="mb-3 mt-4">
-              <button className="btn btn-dark" type="submit">
-                <i className="far fa-save me-2"></i>Save changes
-              </button>
-            </div>
-          </form>
-
+        <div className="col-12 col-md-7">
           {/*testing*/}
           <div
             className="custom-file-container"
@@ -79,12 +92,7 @@ function AdminPost() {
             <div className="custom-file-container__image-preview"></div>
 
             <div className="row">
-              <div className="col-6">
-                <button className="w-100 btn btn-dark" onClick={check}>
-                  <i className="far fa-save me-2"></i>see
-                </button>
-              </div>
-              <div className="col-6">
+              <div className="col-12">
                 <button className="w-100 btn btn-dark">
                   <a
                     className="custom-file-container__image-clear text-white"
@@ -96,6 +104,99 @@ function AdminPost() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="col-12 col-md-5 mt-5 mt-md-0">
+          <form onSubmit={submitDetails}>
+            <h3 className="mb-4">Item Details</h3>
+            <div className="row">
+              <div className="mb-3">
+                <label className="form-label" htmlFor="item_name">
+                  Item Name
+                </label>
+                <input
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className="form-control"
+                  type="text"
+                  id="item_name"
+                />
+              </div>
+
+              <div className="mb-3">
+                <span className="form-label mb-2">select available Sizes</span>{" "}
+                <br />
+                {sizes.map(({ name, show }, index) => (
+                  <div className="form-check form-check-inline" key={index}>
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id={`custom-checkbox-${index}`}
+                      value={name}
+                      onChange={handleSizeOnChange}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor={`custom-checkbox-${index}`}
+                    >
+                      {show}
+                    </label>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mb-3">
+                <span className="form-label mb-2">Select Categories</span>{" "}
+                <br />
+                {categories !== null ? (
+                  categories.map((cat, index) => (
+                    <div className="form-check form-check-inline" key={cat._id}>
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        id={`custom-checkbox2-${index}`}
+                        value={cat.name}
+                        onChange={handleCatChange}
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor={`custom-checkbox2-${index}`}
+                      >
+                        {cat.name}
+                      </label>
+                    </div>
+                  ))
+                ) : (
+                  <Loading />
+                )}
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label" htmlFor="item_price">
+                  Item Price
+                </label>
+                <input
+                  value={formData.price}
+                  onChange={(e) =>
+                    setFormData({ ...formData, price: e.target.value })
+                  }
+                  className="form-control"
+                  type="text"
+                  id="item_price"
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">{error ? errorDiv : null}</div>
+            </div>
+            <div className="mb-3 mt-4">
+              <button className="btn btn-dark" type="submit">
+                <i className="far fa-save me-2"></i>Save changes
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -1,15 +1,20 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { getShopCategories } from "../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Admin() {
+  const categories = useSelector((state) => state.shop.categories);
   const authState = useSelector((state) => state.auth.auth);
   const location = useLocation();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    //console.log("auths state is", authState);
-  }, [authState]);
+    if (categories === null) {
+      dispatch(getShopCategories());
+    }
+  }, [categories, dispatch]);
 
   const inOrders = () => {
     return location.pathname === "/admin/orders" ? true : false;
