@@ -93,6 +93,24 @@ export function createCategory(details, token) {
   });
 }
 
+export function postShopItem(deta, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "admin/saveshopitem", deta, {
+        headers: {
+          "x-auth-token": token,
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
+
 //shop routes
 //get all shop categories
 export async function getCategories() {

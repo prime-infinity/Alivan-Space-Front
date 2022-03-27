@@ -4,10 +4,11 @@ import FileUploadWithPreview from "file-upload-with-preview";
 import "file-upload-with-preview/dist/file-upload-with-preview.min.css";
 import Loading from "../../ui/Loading";
 import { sizes } from "../../../utils/sizes";
+import { postShopItem } from "../../../helpers/auth";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function AdminPost() {
-  //const authState = useSelector((state) => state.auth.auth);
+  const authState = useSelector((state) => state.auth.auth);
   const categories = useSelector((state) => state.shop.categories);
   const [upload, setUpload] = useState(null);
   const [error, setErrors] = useState(null);
@@ -18,12 +19,41 @@ function AdminPost() {
     price: "",
   });
   const errorDiv = <small className="text-danger">{error}</small>;
+
+  const handleErrors = (e) => {
+    e.response?.data ? setErrors(e.response.data) : setErrors(e.message);
+  };
+
+  const handleSuccess = (e) => {
+    console.log(e);
+  };
+
   const submitDetails = (e) => {
     e.preventDefault();
     setErrors(null);
 
-    console.log(formData);
-    //console.log(upload.cachedFileArray);
+    const formData2 = new FormData();
+
+    for (let i = 0; i < upload.cachedFileArray.length; i++) {
+      formData2.append(
+        "item-images",
+        upload.cachedFileArray[i],
+        upload.cachedFileArray[i].name
+      );
+    }
+
+    formData2.append("name", formData.name);
+    formData2.append("sizes", formData.sizes);
+    formData2.append("categories", formData.categories);
+    formData2.append("price", formData.price);
+
+    postShopItem(formData2, authState.token)
+      .then((res) => {
+        handleSuccess(res);
+      })
+      .catch((err) => {
+        handleErrors(err);
+      });
   };
 
   useEffect(() => {
@@ -86,7 +116,7 @@ function AdminPost() {
                 multiple
                 aria-label="Choose File"
               />
-              <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+              <input type="hidden" name="MAX_FILE_SIZE" value="25000000" />
               <span className="custom-file-container__custom-file__custom-file-control"></span>
             </label>
             <div className="custom-file-container__image-preview"></div>
@@ -157,7 +187,7 @@ function AdminPost() {
                         className="form-check-input"
                         type="checkbox"
                         id={`custom-checkbox2-${index}`}
-                        value={cat.name}
+                        value={cat._id}
                         onChange={handleCatChange}
                       />
                       <label
@@ -189,11 +219,13 @@ function AdminPost() {
               </div>
             </div>
             <div className="row">
-              <div className="col-12">{error ? errorDiv : null}</div>
+              <div className="col-12 text-center">
+                {error ? errorDiv : null}
+              </div>
             </div>
             <div className="mb-3 mt-4">
-              <button className="btn btn-dark" type="submit">
-                <i className="far fa-save me-2"></i>Save changes
+              <button className="btn btn-dark w-100" type="submit">
+                <i className="far fa-save me-2"></i>Post Item
               </button>
             </div>
           </form>
