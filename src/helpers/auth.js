@@ -42,8 +42,8 @@ export async function getDetails(token) {
       headers: { "x-auth-token": token },
     });
     return data;
-  } catch {
-    return null;
+  } catch (e) {
+    return e.message;
   }
 }
 
@@ -117,7 +117,18 @@ export async function getCategories() {
   try {
     const { data } = await axios.get(backendHost + "shop/getcategories");
     return data;
-  } catch {
-    return null;
+  } catch (e) {
+    //console.log(e.message);
+    return e.message; //Network Error
+  }
+}
+
+export async function getArrivals() {
+  try {
+    const { data } = await axios.get(backendHost + "shop/getnewitems");
+    return data;
+  } catch (e) {
+    //console.log(e.message);
+    return e.message;
   }
 }

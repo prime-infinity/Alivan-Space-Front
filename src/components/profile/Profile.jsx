@@ -5,6 +5,7 @@ import { removeFromLocal } from "../../helpers/controlStorage";
 import Loading from "../ui/Loading";
 import { useEffect } from "react";
 import { setUserDetail } from "../../redux/slices/userdetailsSlice";
+import NetworkErr from "../ui/NetworkErr";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Profile() {
@@ -22,7 +23,6 @@ function Profile() {
     if (userDetails === null) {
       dispatch(setUserDetail(authState.token));
     }
-    console.log("userdetails is", userDetails);
   }, [userDetails, dispatch, authState.token]);
 
   const inProfile = () => {
@@ -242,7 +242,13 @@ function Profile() {
               </div>
             </div>
             {/*<!-- /Customer Sidebar-->*/}
-            {userDetails !== null ? <Outlet /> : <Loading />}
+            {userDetails === "Network Error" ? (
+              <NetworkErr />
+            ) : userDetails !== null ? (
+              <Outlet />
+            ) : (
+              <Loading />
+            )}
           </div>
         </div>
       </section>

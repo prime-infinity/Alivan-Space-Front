@@ -5,6 +5,7 @@ import "file-upload-with-preview/dist/file-upload-with-preview.min.css";
 import Loading from "../../ui/Loading";
 import { sizes } from "../../../utils/sizes";
 import { postShopItem } from "../../../helpers/auth";
+import NetworkErr from "../../ui/NetworkErr";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function AdminPost() {
@@ -180,7 +181,9 @@ function AdminPost() {
               <div className="mb-3">
                 <span className="form-label mb-2">Select Categories</span>{" "}
                 <br />
-                {categories !== null ? (
+                {categories === "Network Error" ? (
+                  <NetworkErr />
+                ) : categories !== null ? (
                   categories.map((cat, index) => (
                     <div className="form-check form-check-inline" key={cat._id}>
                       <input

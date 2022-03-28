@@ -7,6 +7,7 @@ import {
   getShopCategories,
   addToCategories,
 } from "../../../redux/slices/shopSlice";
+import NetworkErr from "../../ui/NetworkErr";
 
 function AdminCreateCat() {
   const authState = useSelector((state) => state.auth.auth);
@@ -74,7 +75,9 @@ function AdminCreateCat() {
               </div>
             </div>
             <div className="row">
-              <div className="col-12">{error ? errorDiv : null}</div>
+              <div className="col-12 text-center">
+                {error ? errorDiv : null}
+              </div>
             </div>
             <div className="mb-3 mt-4">
               <button className="btn btn-dark" type="submit">
@@ -87,12 +90,14 @@ function AdminCreateCat() {
         {/** where to render categories*/}
         <div className="col-12 col-md-7">
           <h3 className="mb-4">All Categories</h3>
-          {categories == null ? (
-            <Loading />
-          ) : (
+          {categories === "Network Error" ? (
+            <NetworkErr />
+          ) : categories != null ? (
             <div className="row p-2">
               <Categories />{" "}
             </div>
+          ) : (
+            <Loading />
           )}
         </div>
       </div>
