@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function Footer() {
   const location = useLocation();
   const notAllowed = () => {
@@ -113,46 +114,31 @@ function Footer() {
                     <ul className="list-unstyled text-sm pt-2 pt-lg-0">
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           For Women
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           For Men
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Stores
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Our Blog
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Shop
                         </a>
                       </li>
@@ -177,19 +163,13 @@ function Footer() {
                     <ul className="list-unstyled text-sm pt-2 pt-lg-0">
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Login
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Register
                         </a>
                       </li>
@@ -204,19 +184,13 @@ function Footer() {
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Our Products
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Checkouts
                         </a>
                       </li>
@@ -241,46 +215,31 @@ function Footer() {
                     <ul className="list-unstyled text-sm pt-2 pt-lg-0">
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Login
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Register
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Wishlist
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Our Products
                         </a>
                       </li>
                       <li className="mb-2">
                         {" "}
-                        <a
-                          className="text-muted text-dark-hover link-animated"
-                          href="/#"
-                        >
+                        <a className="text-muted text-dark-hover link-animated">
                           Checkouts
                         </a>
                       </li>
@@ -306,27 +265,19 @@ function Footer() {
               <ul className="list-inline mb-0 mt-2 mt-md-0 text-center text-lg-end">
                 <li className="list-inline-item">
                   {" "}
-                  <a className="text-reset" href="/#">
-                    Terms &amp; Conditions{" "}
-                  </a>
+                  <a className="text-reset">Terms &amp; Conditions </a>
                 </li>
                 <li className="list-inline-item">
                   {" "}
-                  <a className="text-reset" href="/#">
-                    Privacy &amp; cookies{" "}
-                  </a>
+                  <a className="text-reset">Privacy &amp; cookies </a>
                 </li>
                 <li className="list-inline-item">
                   {" "}
-                  <a className="text-reset" href="/#">
-                    Accessibility{" "}
-                  </a>
+                  <a className="text-reset">Accessibility </a>
                 </li>
                 <li className="list-inline-item">
                   {" "}
-                  <a className="text-reset" href="/#">
-                    Customer Data Promise{" "}
-                  </a>
+                  <a className="text-reset">Customer Data Promise </a>
                 </li>
               </ul>
             </div>

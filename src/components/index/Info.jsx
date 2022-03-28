@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function Info() {
   return (
     <div className="container py-6 text-center">
@@ -9,9 +10,7 @@ function Info() {
         The bedding was hardly able to cover it and seemed ready to slide off
         any moment!
       </p>
-      <a className="btn btn-dark" href="/#">
-        Start shopping
-      </a>
+      <a className="btn btn-dark">Start shopping</a>
     </div>
   );
 }
