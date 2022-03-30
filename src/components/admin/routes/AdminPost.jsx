@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import FileUploadWithPreview from "file-upload-with-preview";
 import "file-upload-with-preview/dist/file-upload-with-preview.min.css";
@@ -6,11 +6,14 @@ import Loading from "../../ui/Loading";
 import { sizes } from "../../../utils/sizes";
 import { postShopItem } from "../../../helpers/auth";
 import NetworkErr from "../../ui/NetworkErr";
+import { setIsUploading } from "../../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function AdminPost() {
   const authState = useSelector((state) => state.auth.auth);
   const categories = useSelector((state) => state.shop.categories);
+  const isUploading = useSelector((state) => state.shop.isUploading);
+  const dispatch = useDispatch();
   const [upload, setUpload] = useState(null);
   const [error, setErrors] = useState(null);
   const [formData, setFormData] = useState({
@@ -22,15 +25,18 @@ function AdminPost() {
   const errorDiv = <small className="text-danger">{error}</small>;
 
   const handleErrors = (e) => {
+    dispatch(setIsUploading(false));
     e.response?.data ? setErrors(e.response.data) : setErrors(e.message);
   };
 
   const handleSuccess = (e) => {
+    dispatch(setIsUploading(false));
     console.log(e);
   };
 
   const submitDetails = (e) => {
     e.preventDefault();
+    dispatch(setIsUploading(true));
     setErrors(null);
 
     const formData2 = new FormData();
@@ -227,9 +233,13 @@ function AdminPost() {
               </div>
             </div>
             <div className="mb-3 mt-4">
-              <button className="btn btn-dark w-100" type="submit">
-                <i className="far fa-save me-2"></i>Post Item
-              </button>
+              {isUploading ? (
+                <Loading />
+              ) : (
+                <button className="btn btn-dark w-100" type="submit">
+                  <i className="far fa-save me-2"></i>Create Item
+                </button>
+              )}
             </div>
           </form>
         </div>

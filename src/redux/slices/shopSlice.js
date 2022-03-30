@@ -6,6 +6,7 @@ export const shopSlice = createSlice({
   initialState: {
     categories: null,
     newArrivals: null,
+    isUploading: false,
   },
   reducers: {
     setCategories: (state, action) => {
@@ -17,12 +18,16 @@ export const shopSlice = createSlice({
     setNewArrivals: (state, action) => {
       state.newArrivals = action.payload;
     },
+    setIsUploading: (state, action) => {
+      state.isUploading = action.payload;
+    },
   },
 });
 
 export const { setCategories } = shopSlice.actions;
 export const { addToCategories } = shopSlice.actions;
 export const { setNewArrivals } = shopSlice.actions;
+export const { setIsUploading } = shopSlice.actions;
 
 //the following is called at anypoint where categories component is mounted
 export const getShopCategories = () => async (dispatch) => {

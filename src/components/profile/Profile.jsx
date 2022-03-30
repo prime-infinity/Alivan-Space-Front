@@ -243,7 +243,9 @@ function Profile() {
             </div>
             {/*<!-- /Customer Sidebar-->*/}
             {userDetails === "Network Error" ? (
-              <NetworkErr />
+              <div className="col-lg-8 col-xl-9 mb-5 mb-lg-0">
+                <NetworkErr />
+              </div>
             ) : userDetails !== null ? (
               <Outlet />
             ) : (

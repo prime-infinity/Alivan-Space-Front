@@ -8,7 +8,7 @@ import {
   addToCategories,
 } from "../../../redux/slices/shopSlice";
 import NetworkErr from "../../ui/NetworkErr";
-
+//bcac76
 function AdminCreateCat() {
   const authState = useSelector((state) => state.auth.auth);
   const categories = useSelector((state) => state.shop.categories);
@@ -80,8 +80,8 @@ function AdminCreateCat() {
               </div>
             </div>
             <div className="mb-3 mt-4">
-              <button className="btn btn-dark" type="submit">
-                <i className="far fa-save me-2"></i>Save changes
+              <button className="btn btn-dark w-100" type="submit">
+                <i className="far fa-save me-2"></i>Save
               </button>
             </div>
           </form>
