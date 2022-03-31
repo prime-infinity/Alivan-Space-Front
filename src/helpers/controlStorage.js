@@ -22,3 +22,24 @@ export const saveToLocal = (user) => {
 export const removeFromLocal = () => {
   localStorage.removeItem("alivanauth");
 };
+
+export const cartFromLocal = () => {
+  try {
+    const cartInLocal = localStorage.getItem("alivancart")
+      ? JSON.parse(localStorage.getItem("alivancart"))
+      : null;
+    return cartInLocal;
+  } catch (e) {
+    console.warn(e);
+    return [];
+  }
+};
+
+export const cartToLocal = (data) => {
+  try {
+    const serialisedState = JSON.stringify(data);
+    localStorage.setItem("alivancart", serialisedState);
+  } catch (e) {
+    console.warn(e);
+  }
+};

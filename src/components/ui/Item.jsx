@@ -1,5 +1,23 @@
+import { useSelector } from "react-redux";
+import { addToWishList } from "../../helpers/auth";
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Item({ item }) {
+  const authState = useSelector((state) => state.auth.auth);
+  const addToWish = (e) => {
+    addToWishList(e, authState.token)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const addToCart = (e) => {
+    console.log(e);
+  };
+
   return (
     <div className="col-xl-3 col-sm-4 col-6">
       <div className="product product-type-0">
@@ -20,7 +38,10 @@ function Item({ item }) {
           </a>
 
           <div className="product-hover-overlay">
-            <a className="text-dark text-sm">
+            <a
+              onClick={() => addToCart(item._id)}
+              className="text-dark text-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none"
@@ -39,7 +60,10 @@ function Item({ item }) {
             </a>
 
             <div>
-              <a className="text-dark text-primary-hover me-2">
+              <a
+                onClick={() => addToWish(item._id)}
+                className="text-dark text-primary-hover me-2"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 svg-icon svg-icon-heavy"

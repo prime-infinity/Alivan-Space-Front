@@ -1,5 +1,19 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getWish } from "../../redux/slices/shopSlice";
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function WishModal() {
+  const authState = useSelector((state) => state.auth.auth);
+  const wish = useSelector((state) => state.shop.wish);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (wish === null) {
+      dispatch(getWish(authState.token));
+    }
+  }, [wish, dispatch, authState.token]);
+
   return (
     <div
       className="modal fade modal-right"

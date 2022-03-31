@@ -36,6 +36,7 @@ export function getUserFromLocal() {
   return JSON.parse(userStr);
 }
 
+//user routes
 export async function getDetails(token) {
   try {
     const { data } = await axios.get(backendHost + "userdetails", {
@@ -75,6 +76,34 @@ export function submitUserAddress(details, token) {
         rej(err);
       });
   });
+}
+
+export function addToWishList(deta, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "userdetails/addtowish", deta, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
+
+export function getWishFb(token){
+  try {
+    const { data } = await axios.get(backendHost + "userdetails/getwish", {
+      headers: { "x-auth-token": token },
+    });
+    return data;
+  } catch (e) {
+    return e.message;
+  }
 }
 
 //admin routes
