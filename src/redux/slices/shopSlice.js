@@ -25,7 +25,7 @@ export const shopSlice = createSlice({
       state.isUploading = action.payload;
     },
     setCart: (state, action) => {
-      state.cart = action.payload;
+      state.cart = [...state.cart, action.payload];
     },
     setWish: (state, action) => {
       state.wish = action.payload;

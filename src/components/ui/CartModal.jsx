@@ -11,7 +11,7 @@ function CartModal() {
     if (cart == null) {
       dispatch(getCart());
     }
-  }, [dispatch]);
+  }, [cart, dispatch]);
 
   return (
     <div
@@ -55,210 +55,69 @@ function CartModal() {
 
             {cart.length > 0 && (
               <div className="sidebar-cart-product-wrapper custom-scrollbar">
-                {/*<!-- cart item-->*/}
-                <div className="navbar-cart-product">
-                  <div className="d-flex align-items-center">
-                    <a>
-                      <img
-                        className="img-fluid navbar-cart-product-image"
-                        src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/product-square-ian-dooley-347968-unsplash.jpg"
-                        alt="..."
-                      />
-                    </a>
-                    <div className="w-100">
-                      <a className="navbar-cart-product-remove">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="svg-icon sidebar-cart-icon"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                {cart.map((car) => (
+                  <div key={car._id} className="navbar-cart-product">
+                    <div className="d-flex align-items-center">
+                      <a>
+                        <img
+                          className="img-fluid navbar-cart-product-image"
+                          src={car.imagesLocation[0]}
+                          alt="..."
+                        />
                       </a>
-                      <div className="ps-3">
-                        {" "}
-                        <a className="navbar-cart-product-link text-dark link-animated">
-                          Skull Tee
+                      <div className="w-100">
+                        <a className="navbar-cart-product-remove">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="svg-icon sidebar-cart-icon"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
                         </a>
-                        <small className="d-block text-muted">
+                        <div className="ps-3">
+                          {" "}
+                          <a className="navbar-cart-product-link text-dark link-animated">
+                            {car.name}
+                          </a>
+                          {/*<small className="d-block text-muted">
                           Quantity: 1{" "}
-                        </small>
-                        <strong className="d-block text-sm">$75.00 </strong>
+                        </small>*/}
+                          <strong className="d-block text-sm">
+                            ${car.price}
+                          </strong>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                {/*<!-- cart item-->*/}
-                <div className="navbar-cart-product">
-                  <div className="d-flex align-items-center">
-                    <a>
-                      <img
-                        className="img-fluid navbar-cart-product-image"
-                        src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/product-square-kyle-loftus-596319-unsplash.jpg"
-                        alt="..."
-                      />
-                    </a>
-                    <div className="w-100">
-                      <a className="navbar-cart-product-remove">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="svg-icon sidebar-cart-icon"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                      <div className="ps-3">
-                        {" "}
-                        <a className="navbar-cart-product-link text-dark link-animated">
-                          Transparent Blouse
-                        </a>
-                        <small className="d-block text-muted">
-                          Quantity: 1{" "}
-                        </small>
-                        <strong className="d-block text-sm">$75.00 </strong>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/*<!-- cart item-->*/}
-                <div className="navbar-cart-product">
-                  <div className="d-flex align-items-center">
-                    <a>
-                      <img
-                        className="img-fluid navbar-cart-product-image"
-                        src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/product-square-serrah-galos-494312-unsplash.jpg"
-                        alt="..."
-                      />
-                    </a>
-                    <div className="w-100">
-                      <a className="navbar-cart-product-remove">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="svg-icon sidebar-cart-icon"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                      <div className="ps-3">
-                        {" "}
-                        <a className="navbar-cart-product-link text-dark link-animated">
-                          White Tee
-                        </a>
-                        <small className="d-block text-muted">
-                          Quantity: 1{" "}
-                        </small>
-                        <strong className="d-block text-sm">$75.00 </strong>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/*<!-- cart item-->*/}
-                <div className="navbar-cart-product">
-                  <div className="d-flex align-items-center">
-                    <a>
-                      <img
-                        className="img-fluid navbar-cart-product-image"
-                        src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/product-square-ian-dooley-347968-unsplash.jpg"
-                        alt="..."
-                      />
-                    </a>
-                    <div className="w-100">
-                      <a className="navbar-cart-product-remove">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="svg-icon sidebar-cart-icon"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                      <div className="ps-3">
-                        {" "}
-                        <a className="navbar-cart-product-link text-dark link-animated">
-                          Skull Tee
-                        </a>
-                        <small className="d-block text-muted">
-                          Quantity: 1{" "}
-                        </small>
-                        <strong className="d-block text-sm">$75.00 </strong>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/*<!-- cart item-->*/}
-                <div className="navbar-cart-product">
-                  <div className="d-flex align-items-center">
-                    <a>
-                      <img
-                        className="img-fluid navbar-cart-product-image"
-                        src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/product/product-square-kyle-loftus-596319-unsplash.jpg"
-                        alt="..."
-                      />
-                    </a>
-                    <div className="w-100">
-                      <a className="navbar-cart-product-remove">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="svg-icon sidebar-cart-icon"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                      <div className="ps-3">
-                        {" "}
-                        <a className="navbar-cart-product-link text-dark link-animated">
-                          Transparent Blouse
-                        </a>
-                        <small className="d-block text-muted">
-                          Quantity: 1{" "}
-                        </small>
-                        <strong className="d-block text-sm">$75.00 </strong>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             )}
           </div>
-          <div className="modal-footer sidebar-cart-footer shadow">
-            <div className="w-100">
-              <h5 className="mb-4">
-                Subtotal: <span className="float-right">$465.32</span>
-              </h5>
-              <div className="d-grid gap-3">
-                {/*<a className="btn btn-outline-dark">View cart</a>*/}
-                <a className="btn btn-dark">Checkout</a>
+          {cart.length > 0 && (
+            <div className="modal-footer sidebar-cart-footer shadow">
+              <div className="w-100">
+                <h5 className="mb-4">
+                  Subtotal:{" "}
+                  <span className="float-right">
+                    {cart.reduce(
+                      (accumulator, ele) => accumulator + ele.price,
+                      0
+                    )}
+                  </span>
+                </h5>
+                <div className="d-grid gap-3">
+                  {/*<a className="btn btn-outline-dark">View cart</a>*/}
+                  <a className="btn btn-dark">Checkout</a>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

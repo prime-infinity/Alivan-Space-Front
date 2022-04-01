@@ -95,7 +95,7 @@ export function addToWishList(deta, token) {
   });
 }
 
-export function getWishFb(token){
+export async function getWishFb(token) {
   try {
     const { data } = await axios.get(backendHost + "userdetails/getwish", {
       headers: { "x-auth-token": token },

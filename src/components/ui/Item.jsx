@@ -1,8 +1,10 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addToWishList } from "../../helpers/auth";
+import { setCart, saveCartToLocal } from "../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Item({ item }) {
+  const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth.auth);
   const addToWish = (e) => {
     addToWishList(e, authState.token)
@@ -16,6 +18,9 @@ function Item({ item }) {
 
   const addToCart = (e) => {
     console.log(e);
+
+    dispatch(setCart(e));
+    dispatch(saveCartToLocal());
   };
 
   return (
@@ -38,10 +43,7 @@ function Item({ item }) {
           </a>
 
           <div className="product-hover-overlay">
-            <a
-              onClick={() => addToCart(item._id)}
-              className="text-dark text-sm"
-            >
+            <a onClick={() => addToCart(item)} className="text-dark text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none"

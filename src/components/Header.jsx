@@ -193,16 +193,14 @@ function Header() {
                 ) : null}
               </li>
               <li className="list-inline-item position-relative me-3">
-                {authState !== null ? (
-                  <a
-                    className="text-dark text-primary-hover"
-                    data-bs-toggle="modal"
-                    data-bs-target="#sidebarCart"
-                  >
-                    {sideCartIcon}
-                    {/*<div className="navbar-icon-badge">5</div>*/}
-                  </a>
-                ) : null}
+                <a
+                  className="text-dark text-primary-hover"
+                  data-bs-toggle="modal"
+                  data-bs-target="#sidebarCart"
+                >
+                  {sideCartIcon}
+                  {/*<div className="navbar-icon-badge">5</div>*/}
+                </a>
               </li>
               <li className="list-inline-item">
                 <a
