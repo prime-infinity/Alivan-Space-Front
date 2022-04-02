@@ -1,6 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addToWishList } from "../../helpers/auth";
-import { addToCart, saveCartToLocal } from "../../redux/slices/shopSlice";
+import {
+  addToCart,
+  saveCartToLocal,
+  setWish,
+} from "../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Item({ item }) {
@@ -10,7 +14,7 @@ function Item({ item }) {
   const addToWish = (e) => {
     addToWishList({ id: e }, authState.token)
       .then((res) => {
-        console.log(res);
+        dispatch(setWish(res));
       })
       .catch((err) => {
         console.log(err);
@@ -26,6 +30,11 @@ function Item({ item }) {
     <div className="col-xl-3 col-sm-4 col-6">
       <div className="product product-type-0">
         <div className="product-image mb-md-3">
+          {item.state === 1 ? (
+            <div className="product-badge badge bg-secondary">Fresh</div>
+          ) : item.state === 2 ? (
+            <div className="product-badge badge bg-dark">Sold out</div>
+          ) : null}
           <a>
             <div className="product-swap-image">
               <img

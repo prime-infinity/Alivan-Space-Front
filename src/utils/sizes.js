@@ -1,18 +1,18 @@
 export const sizes = [
   {
-    name: "s",
+    name: "Small",
     show: "small",
   },
   {
-    name: "m",
+    name: "Medium",
     show: "medium",
   },
   {
-    name: "l",
+    name: "Large",
     show: "large",
   },
   {
-    name: "xl",
+    name: "X-large",
     show: "X-large",
   },
 ];

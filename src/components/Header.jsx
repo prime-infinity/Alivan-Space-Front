@@ -94,14 +94,10 @@ function Header() {
 
             <li className="list-inline-item me-3">
               {authState !== null ? (
-                <a
-                  className="text-dark text-primary-hover position-relative"
-                  data-bs-toggle="modal"
-                  data-bs-target="#wishModal"
-                >
+                <Link to="/profile/wishlist">
                   {wishListIcon}
                   {/*<div className="navbar-icon-badge">3</div>*/}
-                </a>
+                </Link>
               ) : null}
             </li>
             <li className="list-inline-item position-relative me-3">
@@ -185,14 +181,10 @@ function Header() {
               </li>
               <li className="list-inline-item me-3">
                 {authState !== null ? (
-                  <a
-                    className="text-dark text-primary-hover position-relative"
-                    data-bs-toggle="modal"
-                    data-bs-target="#wishModal"
-                  >
+                  <Link to="/profile/wishlist">
                     {wishListIcon}
                     {/*<div className="navbar-icon-badge">3</div>*/}
-                  </a>
+                  </Link>
                 ) : null}
               </li>
               <li className="list-inline-item position-relative me-3">

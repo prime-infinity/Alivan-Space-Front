@@ -61,14 +61,24 @@ function Profile() {
           </ol>
           {/*<!-- Hero Content-->*/}
           <div className="hero-content">
-            <h1 className="hero-heading">Your profile</h1>
-            <div>
+            <h1 className="hero-heading">
+              {inProfile()
+                ? "Your profile"
+                : inOrders()
+                ? "Your orders"
+                : inAddress()
+                ? "Your address"
+                : inWishlist()
+                ? "Your wishlist"
+                : null}{" "}
+            </h1>
+            {/*<div>
               <p className="lead text-muted">
                 Maecenas sollicitudin. In rutrum. In convallis. Nunc tincidunt
                 ante vitae massa. Cras pede libero, dapibus nec, pretium sit
                 amet, tempor quis. Fusce dui leo, imperdiet in.
               </p>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

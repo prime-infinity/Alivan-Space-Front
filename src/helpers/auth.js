@@ -93,6 +93,21 @@ export function addToWishList(data, token) {
   });
 }
 
+export function removeFromWishList(index, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "userdetails/removefromwish", index, {
+        headers: { "x-auth-token": token },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
+
 export async function getWishFb(token) {
   try {
     const { data } = await axios.get(backendHost + "userdetails/getwish", {
@@ -150,9 +165,23 @@ export async function getCategories() {
   }
 }
 
+//get shop new arrivals
 export async function getArrivals() {
   try {
     const { data } = await axios.get(backendHost + "shop/getnewitems");
+    return data;
+  } catch (e) {
+    //console.log(e.message);
+    return e.message;
+  }
+}
+
+///get shop items by id
+export async function getItemById(id) {
+  try {
+    const { data } = await axios.get(backendHost + "shop/getitembyid", {
+      params: { id: id },
+    });
     return data;
   } catch (e) {
     //console.log(e.message);
