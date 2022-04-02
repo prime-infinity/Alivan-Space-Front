@@ -8,7 +8,7 @@ function Item({ item }) {
   const authState = useSelector((state) => state.auth.auth);
 
   const addToWish = (e) => {
-    addToWishList(e, authState.token)
+    addToWishList({ id: e }, authState.token)
       .then((res) => {
         console.log(res);
       })

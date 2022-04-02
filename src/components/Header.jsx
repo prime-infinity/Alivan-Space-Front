@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import LoginModal from "./ui/LoginModal";
 import CartModal from "./ui/CartModal";
 import MenuModal from "./ui/MenuModal";
-//import WishModal from "./ui/WishModal";
+import WishModal from "./ui/WishModal";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Header() {
@@ -226,7 +226,7 @@ function Header() {
       {cart != null && <CartModal />}
 
       {/*<!-- wishlist Modal-->*/}
-      {/*authState && <WishModal />*/}
+      {authState && <WishModal />}
 
       {/*<!-- Sidebar Modal Right-->*/}
       <MenuModal />

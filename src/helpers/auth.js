@@ -78,10 +78,10 @@ export function submitUserAddress(details, token) {
   });
 }
 
-export function addToWishList(deta, token) {
+export function addToWishList(data, token) {
   return new Promise((res, rej) => {
     axios
-      .post(backendHost + "userdetails/addtowish", deta, {
+      .post(backendHost + "userdetails/addtowish", data, {
         headers: { "x-auth-token": token },
       })
       .then((result) => {
