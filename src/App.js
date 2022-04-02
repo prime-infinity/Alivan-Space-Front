@@ -5,6 +5,7 @@ import "./file-upload-with-preview.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth } from "./redux/slices/authSlice";
+import { getCart } from "./redux/slices/shopSlice";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -26,10 +27,15 @@ import { useEffect } from "react";
 
 function App() {
   const authState = useSelector((state) => state.auth.auth);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAuth());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getCart());
   }, [dispatch]);
 
   return (

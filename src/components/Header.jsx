@@ -4,11 +4,12 @@ import { useSelector } from "react-redux";
 import LoginModal from "./ui/LoginModal";
 import CartModal from "./ui/CartModal";
 import MenuModal from "./ui/MenuModal";
-import WishModal from "./ui/WishModal";
+//import WishModal from "./ui/WishModal";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Header() {
   const authState = useSelector((state) => state.auth.auth);
+  const cart = useSelector((state) => state.shop.cart);
 
   const loginIcon = (
     <svg
@@ -104,14 +105,16 @@ function Header() {
               ) : null}
             </li>
             <li className="list-inline-item position-relative me-3">
-              <a
-                className="text-dark text-primary-hover"
-                data-bs-toggle="modal"
-                data-bs-target="#sidebarCart"
-              >
-                {sideCartIcon}
-                {/*<div className="navbar-icon-badge">5</div>*/}
-              </a>
+              {cart != null && (
+                <a
+                  className="text-dark text-primary-hover"
+                  data-bs-toggle="modal"
+                  data-bs-target="#sidebarCart"
+                >
+                  {sideCartIcon}
+                  {/*<div className="navbar-icon-badge">5</div>*/}
+                </a>
+              )}
             </li>
           </ul>
           <button
@@ -220,10 +223,10 @@ function Header() {
       {!authState && <LoginModal />}
 
       {/*<!-- Sidebar Cart Modal-->*/}
-      <CartModal />
+      {cart != null && <CartModal />}
 
       {/*<!-- wishlist Modal-->*/}
-      {authState && <WishModal />}
+      {/*authState && <WishModal />*/}
 
       {/*<!-- Sidebar Modal Right-->*/}
       <MenuModal />

@@ -1,11 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addToWishList } from "../../helpers/auth";
-import { setCart, saveCartToLocal } from "../../redux/slices/shopSlice";
+import { addToCart, saveCartToLocal } from "../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Item({ item }) {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth.auth);
+
   const addToWish = (e) => {
     addToWishList(e, authState.token)
       .then((res) => {
@@ -16,10 +17,8 @@ function Item({ item }) {
       });
   };
 
-  const addToCart = (e) => {
-    console.log(e);
-
-    dispatch(setCart(e));
+  const addTooCart = (e) => {
+    dispatch(addToCart(e));
     dispatch(saveCartToLocal());
   };
 
@@ -43,7 +42,7 @@ function Item({ item }) {
           </a>
 
           <div className="product-hover-overlay">
-            <a onClick={() => addToCart(item)} className="text-dark text-sm">
+            <a onClick={() => addTooCart(item)} className="text-dark text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 svg-icon text-primary-hover svg-icon-heavy d-sm-none"
@@ -62,25 +61,27 @@ function Item({ item }) {
             </a>
 
             <div>
-              <a
-                onClick={() => addToWish(item._id)}
-                className="text-dark text-primary-hover me-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 svg-icon svg-icon-heavy"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              {authState !== null && (
+                <a
+                  onClick={() => addToWish(item._id)}
+                  className="text-dark text-primary-hover me-2"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
-                </svg>
-              </a>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 svg-icon svg-icon-heavy"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </a>
+              )}
 
               <a
                 className="text-dark text-primary-hover text-decoration-none"

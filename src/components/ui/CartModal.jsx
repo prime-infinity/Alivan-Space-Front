@@ -1,17 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getCart } from "../../redux/slices/shopSlice";
+import { removeCart, saveCartToLocal } from "../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function CartModal() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.shop.cart);
 
-  useEffect(() => {
-    if (cart == null) {
-      dispatch(getCart());
-    }
-  }, [cart, dispatch]);
+  const removeFromCart = (index) => {
+    dispatch(removeCart(index));
+    dispatch(saveCartToLocal());
+  };
 
   return (
     <div
@@ -55,8 +53,8 @@ function CartModal() {
 
             {cart.length > 0 && (
               <div className="sidebar-cart-product-wrapper custom-scrollbar">
-                {cart.map((car) => (
-                  <div key={car._id} className="navbar-cart-product">
+                {cart.map((car, index) => (
+                  <div key={index} className="navbar-cart-product">
                     <div className="d-flex align-items-center">
                       <a>
                         <img
@@ -66,7 +64,10 @@ function CartModal() {
                         />
                       </a>
                       <div className="w-100">
-                        <a className="navbar-cart-product-remove">
+                        <a
+                          onClick={() => removeFromCart(index)}
+                          className="navbar-cart-product-remove"
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="svg-icon sidebar-cart-icon"

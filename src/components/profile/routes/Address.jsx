@@ -23,8 +23,8 @@ function ProfileAddress() {
   };
 
   const handleSuccess = (e) => {
-    dispatch(setDetails(e));
     console.log(e);
+    //dispatch(setDetails(e));
   };
 
   const submitDetails = (e) => {

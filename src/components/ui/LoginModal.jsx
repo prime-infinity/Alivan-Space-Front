@@ -23,12 +23,6 @@ function LoginModal() {
     dispatch(saveAuthToLocal());
     dispatch(setUserDetail(e.token));
 
-    setFormData({
-      name: "",
-      email: "",
-      password: "",
-    });
-
     document.querySelectorAll(".modal-backdrop").forEach((element) => {
       element.style.display = "none";
     });

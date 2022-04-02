@@ -27,7 +27,7 @@ export const cartFromLocal = () => {
   try {
     const cartInLocal = localStorage.getItem("alivancart")
       ? JSON.parse(localStorage.getItem("alivancart"))
-      : null;
+      : [];
     return cartInLocal;
   } catch (e) {
     console.warn(e);
