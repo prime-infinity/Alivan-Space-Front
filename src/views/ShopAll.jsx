@@ -8,7 +8,7 @@ import NetworkErr from "../components/ui/NetworkErr";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function ShopAll() {
   const [allItems, setAllItems] = useState(null);
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
     if (allItems === null) {
@@ -27,10 +27,12 @@ function ShopAll() {
   const pagePrevious = () => {
     console.log("is going prev");
     setPageNumber(pageNumber - 1);
+    console.log(pageNumber);
   };
   const pageNext = () => {
     setPageNumber(pageNumber + 1);
     console.log("is going next");
+    console.log(pageNumber);
   };
 
   return (
@@ -42,6 +44,7 @@ function ShopAll() {
           <NetworkErr />
         ) : allItems.length > 0 ? (
           <ShopGrid
+            allItems={allItems}
             pageNumber={pageNumber}
             pagePrevious={pagePrevious}
             pageNext={pageNext}

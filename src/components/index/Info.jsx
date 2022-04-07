@@ -7,10 +7,10 @@ function Info() {
       <h5 className="h2 fw-light mb-5">
         Our biggest sales this year -- up to 60% off!
       </h5>
-      <p className="h5 text-muted mb-5">
+      {/*<p className="h5 text-muted mb-5">
         The bedding was hardly able to cover it and seemed ready to slide off
         any moment!
-      </p>
+      </p>*/}
       <Link to="shop" className="btn btn-dark">
         Start shopping
       </Link>
