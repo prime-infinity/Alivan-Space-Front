@@ -10,9 +10,18 @@ export const userdetailsSlice = createSlice({
     setDetails: (state, action) => {
       state.details = action.payload;
     },
+    updateDetails: (state, action) => {
+      state.details[0] = action.payload;
+    },
+
+    updateAddress: (state, action) => {
+      state.details[1] = action.payload;
+    },
   },
 });
 
+export const { updateDetails } = userdetailsSlice.actions;
+export const { updateAddress } = userdetailsSlice.actions;
 export const { setDetails } = userdetailsSlice.actions;
 
 //the following is called after login or register.

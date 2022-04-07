@@ -97,11 +97,13 @@ function Profile() {
                     />
                   </a>
                   <h5>{authState.name}</h5>
-                  <p className="text-muted text-sm mb-0">
-                    {userDetails?.address?.city
-                      ? `${userDetails.address.city},${userDetails.address.state}`
-                      : null}
-                  </p>
+                  {userDetails && (
+                    <p className="text-muted text-sm mb-0">
+                      {userDetails[1].city
+                        ? `${userDetails[1].city},${userDetails[1].state}`
+                        : null}
+                    </p>
+                  )}
                 </div>
                 <nav className="list-group customer-nav">
                   <Link

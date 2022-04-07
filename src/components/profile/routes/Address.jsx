@@ -1,7 +1,7 @@
 import { submitUserAddress } from "../../../helpers/auth";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setDetails } from "../../../redux/slices/userdetailsSlice";
+import { updateAddress } from "../../../redux/slices/userdetailsSlice";
 
 function ProfileAddress() {
   const authState = useSelector((state) => state.auth.auth);
@@ -10,11 +10,11 @@ function ProfileAddress() {
 
   const [error, setErrors] = useState(null);
   const [formData, setFormData] = useState({
-    country: userDetails.address.country,
-    state: userDetails.address.state,
-    city: userDetails.address.city,
-    street: userDetails.address.street,
-    zip: userDetails.address.zip,
+    country: userDetails[1].country,
+    state: userDetails[1].state,
+    city: userDetails[1].city,
+    street: userDetails[1].street,
+    zip: userDetails[1].zip,
   });
   const errorDiv = <small className="text-danger">{error}</small>;
 
@@ -23,8 +23,7 @@ function ProfileAddress() {
   };
 
   const handleSuccess = (e) => {
-    console.log(e);
-    //dispatch(setDetails(e));
+    dispatch(updateAddress(e));
   };
 
   const submitDetails = (e) => {
