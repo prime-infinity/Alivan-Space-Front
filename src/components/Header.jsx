@@ -76,7 +76,10 @@ function Header() {
     <div>
       <header className="header">
         <nav className="navbar navbar-expand-lg bg-white border-0 shadow-0 navbar-light px-lg-5 ">
-          <a className="navbar-brand">Alivan Space</a>
+          <Link to="/" className="navbar-brand">
+            {" "}
+            Alivan Space{" "}
+          </Link>
           <ul className="list-inline mb-0 d-block d-lg-none">
             <li className="list-inline-item me-3">
               {authState ? (
@@ -94,7 +97,10 @@ function Header() {
 
             <li className="list-inline-item me-3">
               {authState !== null ? (
-                <Link to="/profile/wishlist">
+                <Link
+                  className="text-dark text-primary-hover"
+                  to="/profile/wishlist"
+                >
                   {wishListIcon}
                   {/*<div className="navbar-icon-badge">3</div>*/}
                 </Link>
@@ -127,14 +133,18 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav mt-3 mt-lg-0">
               <li className="nav-item dropdown active">
-                <a className="nav-link ">Home</a>
+                <Link to="/" className="nav-link ">
+                  Home
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link ">Shop</a>
+                <Link to="/shop" className="nav-link ">
+                  Shop
+                </Link>
               </li>
-              <li className="nav-item dropdown">
+              {/*<li className="nav-item dropdown">
                 <a className="nav-link ">Something</a>
-              </li>
+              </li>*/}
             </ul>
             <form className="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0">
               <div className="input-group input-group-underlined">
@@ -181,7 +191,10 @@ function Header() {
               </li>
               <li className="list-inline-item me-3">
                 {authState !== null ? (
-                  <Link to="/profile/wishlist">
+                  <Link
+                    className="text-dark text-primary-hover"
+                    to="/profile/wishlist"
+                  >
                     {wishListIcon}
                     {/*<div className="navbar-icon-badge">3</div>*/}
                   </Link>

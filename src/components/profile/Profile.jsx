@@ -89,13 +89,13 @@ function Profile() {
             <div className="col-xl-3 col-lg-4 mb-5">
               <div className="customer-sidebar card border-0">
                 <div className="customer-profile">
-                  <a className="d-inline-block">
+                  {/*<a className="d-inline-block">
                     <img
                       className="img-fluid rounded-circle customer-image"
                       src="https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/avatar/avatar-0.jpg"
                       alt=""
                     />
-                  </a>
+                  </a>*/}
                   <h5>{authState.name}</h5>
                   {userDetails && (
                     <p className="text-muted text-sm mb-0">

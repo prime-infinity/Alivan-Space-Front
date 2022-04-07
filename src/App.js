@@ -5,10 +5,11 @@ import "./file-upload-with-preview.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth } from "./redux/slices/authSlice";
-import { getCart } from "./redux/slices/shopSlice";
+import { getCart, getShopCategories } from "./redux/slices/shopSlice";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ShopAll from "./views/ShopAll";
 
 import Profile from "./components/profile/Profile";
 import ProfileProfile from "./components/profile/routes/Profile";
@@ -21,12 +22,14 @@ import Admin from "./components/admin/Admin";
 import AdminOrders from "./components/admin/routes/AdminOrders";
 import AdminCreateCat from "./components/admin/routes/AdminCreateCat";
 import AdminPost from "./components/admin/routes/AdminPost";
+import AdminAllItems from "./components/admin/routes/AdminAllItems";
 
 import ProtectedRoute from "./helpers/protectedRoute";
 import { useEffect } from "react";
 
 function App() {
   const authState = useSelector((state) => state.auth.auth);
+  const categories = useSelector((state) => state.shop.categories);
 
   const dispatch = useDispatch();
 
@@ -38,11 +41,18 @@ function App() {
     dispatch(getCart());
   }, [dispatch]);
 
+  useEffect(() => {
+    if (categories === null) {
+      dispatch(getShopCategories());
+    }
+  }, [categories, dispatch]);
+
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/shop" element={<ShopAll />} />
         <Route
           path="/profile"
           element={
@@ -65,6 +75,7 @@ function App() {
           <Route path="orders" element={<AdminOrders />} />
           <Route path="post" element={<AdminPost />} />
           <Route path="createcat" element={<AdminCreateCat />} />
+          <Route path="allitems" element={<AdminAllItems />} />
         </Route>
 
         <Route path="*" element={<p>There's nothing here: 404!</p>} />

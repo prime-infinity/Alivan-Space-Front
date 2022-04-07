@@ -7,7 +7,8 @@ function Footer() {
     return location.pathname === "/admin" ||
       location.pathname === "/admin/orders" ||
       location.pathname === "/admin/post" ||
-      location.pathname === "/admin/createcat"
+      location.pathname === "/admin/createcat" ||
+      location.pathname === "/shop"
       ? true
       : false;
   };

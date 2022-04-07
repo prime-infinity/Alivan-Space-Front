@@ -188,3 +188,16 @@ export async function getItemById(id) {
     return e.message;
   }
 }
+
+///get all shop items
+export async function getAllItems(pageNumber) {
+  try {
+    const { data } = await axios.get(backendHost + "shop/getitems", {
+      params: { pageNumber: pageNumber },
+    });
+    return data;
+  } catch (e) {
+    //console.log(e.message);
+    return e.message;
+  }
+}

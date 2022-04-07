@@ -21,6 +21,7 @@ function AdminPost() {
     sizes: [],
     categories: [],
     price: "",
+    description: "",
   });
   const errorDiv = <small className="text-danger">{error}</small>;
 
@@ -53,6 +54,7 @@ function AdminPost() {
     formData2.append("sizes", formData.sizes);
     formData2.append("categories", formData.categories);
     formData2.append("price", formData.price);
+    formData2.append("description", formData.description);
 
     postShopItem(formData2, authState.token)
       .then((res) => {
@@ -196,7 +198,7 @@ function AdminPost() {
                         className="form-check-input"
                         type="checkbox"
                         id={`custom-checkbox2-${index}`}
-                        value={cat._id}
+                        value={cat.name}
                         onChange={handleCatChange}
                       />
                       <label
@@ -224,6 +226,21 @@ function AdminPost() {
                   className="form-control"
                   type="text"
                   id="item_price"
+                />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label" htmlFor="item_description">
+                  Item Description
+                </label>
+                <textarea
+                  value={formData.description}
+                  onChange={(e) =>
+                    setFormData({ ...formData, description: e.target.value })
+                  }
+                  className="form-control"
+                  type="text"
+                  id="item_description"
                 />
               </div>
             </div>

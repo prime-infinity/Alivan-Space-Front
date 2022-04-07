@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Info() {
   return (
@@ -10,7 +11,9 @@ function Info() {
         The bedding was hardly able to cover it and seemed ready to slide off
         any moment!
       </p>
-      <a className="btn btn-dark">Start shopping</a>
+      <Link to="shop" className="btn btn-dark">
+        Start shopping
+      </Link>
     </div>
   );
 }

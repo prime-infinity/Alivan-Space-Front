@@ -6,6 +6,7 @@ import {
   saveCartToLocal,
   setWish,
 } from "../../redux/slices/shopSlice";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function QuickViewModal({ closeModal, item }) {
@@ -72,15 +73,12 @@ function QuickViewModal({ closeModal, item }) {
                             index === 0 ? "active" : null
                           }`}
                         >
-                          {img ? (
-                            <img
-                              src={img}
-                              className="d-block w-100"
-                              alt="..."
-                            />
-                          ) : (
-                            <Loading />
-                          )}
+                          <LazyLoadImage
+                            className="d-block w-100"
+                            alt={"product-image"}
+                            placeholder={<Loading />}
+                            src={img}
+                          />
                         </div>
                       ))}
                     </div>
@@ -144,11 +142,7 @@ function QuickViewModal({ closeModal, item }) {
                       </span>
                     </div>*/}
                   </div>
-                  <p className="mb-4 text-muted">
-                    {/*Samsa was a travelling salesman - and above it there hung a
-                    picture that he had recently cut out of an illustrated
-                    magazine and housed in a nice, gilded frame.*/}
-                  </p>
+                  <p className="mb-4 text-muted">{item.description}</p>
 
                   <div className="row">
                     <div className="col-sm-6 col-lg-12 detail-option mb-4">

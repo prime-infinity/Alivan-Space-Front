@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QuickViewModal from "./QuickViewModal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Loading from "./Loading";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Item({ item }) {
@@ -34,24 +35,15 @@ function Item({ item }) {
                 <LazyLoadImage
                   className="img-fluid product-swap-image-front"
                   alt={"product-image"}
-                  src={item.imagesLocation[0]} // use normal <img> attributes as props
+                  placeholder={<Loading />}
+                  src={item.imagesLocation[0]}
                 />
                 <LazyLoadImage
                   className="img-fluid"
                   alt={"product-image"}
-                  src={item.imagesLocation[1]} // use normal <img> attributes as props
-                />
-
-                {/*<img
-                  className="img-fluid product-swap-image-front"
-                  src={item.imagesLocation[0]}
-                  alt="product-image"
-                />
-                <img
-                  className="img-fluid"
+                  placeholder={<Loading />}
                   src={item.imagesLocation[1]}
-                  alt="product-image"
-                />*/}
+                />
               </div>
             </a>
 
