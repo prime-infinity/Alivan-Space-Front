@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Wrapper() {
   return (
@@ -9,10 +11,9 @@ function Wrapper() {
       <div className="swiper-wrapper">
         {/*<!-- Slides-->*/}
         <div
-          className="swiper-slide bg-cover bg-cover-left"
+          className="swiper-slide bg-cover"
           style={{
-            backgroundImage:
-              "url('https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/photo/home-5.jpg')",
+            backgroundImage: "url('images/a.jpg')",
           }}
         >
           <div className="container-fluid px-lg-6 h-100">
@@ -20,27 +21,28 @@ function Wrapper() {
               className="row h-100 align-items-center"
               data-swiper-parallax="-500"
             >
-              <div className="col-lg-6 ms-auto">
-                <p className="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">
-                  Our all-time favourites
+              <div className="col-lg-6 ms-auto theme-text-color">
+                <p className="subtitle letter-spacing-3 mb-3 font-weight-light">
+                  Where Clothes and Accessories live
                 </p>
                 <h2 className="display-3" style={{ lineHeight: "1" }}>
-                  Blouses &amp; Tops
+                  Alivan Space
                 </h2>
-                <p className="text-muted mb-5">
+                {/*<p className="text-muted mb-5">
                   The bedding was hardly able to cover it and seemed ready to
                   slide off any moment. His many legs, pit
-                </p>
-                <a className="btn btn-dark">Discover more</a>
+                </p>*/}
+                <Link to="/shop" className="btn btn-dark mt-4 p-3">
+                  Shop Items
+                </Link>
               </div>
             </div>
           </div>
         </div>
         <div
-          className="swiper-slide bg-cover bg-cover-right"
+          className="swiper-slide bg-cover"
           style={{
-            backgroundImage:
-              "url('https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/photo/home-1.jpg')",
+            backgroundImage: "url('images/b.jpg')",
           }}
         >
           <div className="container-fluid px-lg-6 h-100">
@@ -48,18 +50,20 @@ function Wrapper() {
               className="row h-100 align-items-center"
               data-swiper-parallax="-500"
             >
-              <div className="col-lg-6">
-                <p className="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">
-                  Our all-time favourites
+              <div className="col-lg-6 theme-text-color">
+                <p className="subtitle letter-spacing-3 mb-3 font-weight-light">
+                  Accessorize Yourself
                 </p>
-                <h2 className="display-3" style={{ lineHeight: "1" }}>
+                {/*<h2 className="display-3" style={{ lineHeight: "1" }}>
                   Blouses &amp; Tops
-                </h2>
-                <p className="text-muted mb-5">
-                  The bedding was hardly able to cover it and seemed ready to
-                  slide off any moment. His many legs, pit
+                </h2>*/}
+                <p className="mb-5 subtitle">
+                  Don't just focus on the big picture, Checkout all the smaller
+                  details that will complete you
                 </p>
-                <a className="btn btn-dark">Discover more</a>
+                <Link to="/shop" className="btn btn-dark p-3">
+                  Discover more
+                </Link>
               </div>
             </div>
           </div>
@@ -67,8 +71,7 @@ function Wrapper() {
         <div
           className="swiper-slide bg-cover bg-cover-abnor"
           style={{
-            backgroundImage:
-              "url('https://d19m59y37dris4.cloudfront.net/varkala/2-1/img/photo/home-2.jpg')",
+            backgroundImage: "url('images/c.jpg')",
           }}
         >
           <div className="container-fluid px-lg-6 h-100">
@@ -77,13 +80,38 @@ function Wrapper() {
               data-swiper-parallax="-500"
             >
               <div className="col-lg-6">
-                <p className="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">
-                  Blue &amp; White
+                <p className="subtitle letter-spacing-3 mb-2 text-dark font-weight-light">
+                  More that just Clothes
                 </p>
-                <h2 className="display-3" style={{ lineHeight: "1" }}>
-                  Linen and denim
+                <h2 className="display-3 mb-5" style={{ lineHeight: "1" }}>
+                  A Way Of <span className="theme-text-color">Life!</span>
                 </h2>
-                <a className="btn btn-dark">Start shopping</a>
+                <Link to="/shop" className="btn btn-dark p-3">
+                  Start shopping
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="swiper-slide bg-cover bg-cover-abnor"
+          style={{
+            backgroundImage: "url('images/d.jpg')",
+          }}
+        >
+          <div className="container-fluid px-lg-6 h-100">
+            <div
+              className="row h-100 justify-content-center align-items-center text-center"
+              data-swiper-parallax="-500"
+            >
+              <div className="col-lg-6">
+                {/*<p className="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">
+                  Blue &amp; White
+                </p>*/}
+                <h2 className="display-2" style={{ lineHeight: "1" }}>
+                  Become The <span className="theme-text-color">Trend</span>
+                </h2>
+                {/*<a className="btn btn-dark">Start shopping</a>*/}
               </div>
             </div>
           </div>

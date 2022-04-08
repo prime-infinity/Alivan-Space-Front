@@ -73,10 +73,17 @@ function Footer() {
               <h6 className="text-dark letter-spacing-1 mb-4">Be in touch</h6>
               <p className="text-sm mb-3">
                 {" "}
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-                itaque temporibus.
+                Send us a message, and we'll be in touch ASAP!
               </p>
-              <form action="#" id="newsletter-form">
+              <form id="newsletter-form">
+                <div className="input-group input-group-underlined mb-3">
+                  <input
+                    className="form-control form-control-underlined"
+                    type="text"
+                    placeholder="Your message"
+                  />
+                </div>
+
                 <div className="input-group input-group-underlined mb-3">
                   <input
                     className="form-control form-control-underlined"
@@ -88,65 +95,14 @@ function Footer() {
                     className="btn btn-underlined text-gray-700 py-0"
                     type="button"
                   >
-                    {/*<svg className="svg-icon w-2rem h-2rem">
-                      <use xlink:href="/#envelope-1"> </use>
-</svg>*/}
+                    Send
                   </button>
                 </div>
               </form>
             </div>
             <div className="col-lg-7">
-              <div className="row">
-                <div className="col-lg-4">
-                  <a
-                    className="d-lg-none block-toggler my-3"
-                    data-bs-toggle="collapse"
-                    href="/#footerMenu0"
-                    aria-expanded="false"
-                    aria-controls="footerMenu0"
-                  >
-                    Shop<span className="block-toggler-icon"></span>
-                  </a>
-
-                  <div className="expand-lg collapse" id="footerMenu0">
-                    <h6 className="text-dark letter-spacing-1 mb-4 d-none d-lg-block">
-                      Shop
-                    </h6>
-                    <ul className="list-unstyled text-sm pt-2 pt-lg-0">
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          For Women
-                        </a>
-                      </li>
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          For Men
-                        </a>
-                      </li>
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          Stores
-                        </a>
-                      </li>
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          Our Blog
-                        </a>
-                      </li>
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          Shop
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-lg-4">
+              <div className="row justify-content-end">
+                {/*<div className="col-lg-4">
                   <a
                     className="d-lg-none block-toggler my-3"
                     data-bs-toggle="collapse"
@@ -197,7 +153,7 @@ function Footer() {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div>*/}
                 <div className="col-lg-4">
                   <a
                     className="d-lg-none block-toggler my-3"
@@ -268,7 +224,7 @@ function Footer() {
                   {" "}
                   <a className="text-reset">Terms &amp; Conditions </a>
                 </li>
-                <li className="list-inline-item">
+                {/*<li className="list-inline-item">
                   {" "}
                   <a className="text-reset">Privacy &amp; cookies </a>
                 </li>
@@ -279,7 +235,7 @@ function Footer() {
                 <li className="list-inline-item">
                   {" "}
                   <a className="text-reset">Customer Data Promise </a>
-                </li>
+                </li>*/}
               </ul>
             </div>
           </div>

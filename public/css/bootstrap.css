@@ -13507,7 +13507,7 @@ a.sidebar-icon-menu-link {
   margin-bottom: 0;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #868e96;
+  /*color: #868e96;*/
   font-weight: bold;
 }
 .label-heading {
@@ -14874,7 +14874,7 @@ select.selectpicker {
 .swiper-nav .swiper-button-next {
   transition: all 0.2s ease-in-out;
   opacity: 0.3;
-  color: #212529;
+  color: #7fffd4;
 }
 .swiper-nav .swiper-button-prev:hover,
 .swiper-nav .swiper-button-prev:focus,

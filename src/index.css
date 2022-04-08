@@ -13,3 +13,9 @@
   overflow-y: auto;
   outline: 0;
 }
+.banner-bg-native {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0%;
+}

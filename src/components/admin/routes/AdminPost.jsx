@@ -6,7 +6,10 @@ import Loading from "../../ui/Loading";
 import { sizes } from "../../../utils/sizes";
 import { postShopItem } from "../../../helpers/auth";
 import NetworkErr from "../../ui/NetworkErr";
-import { setIsUploading } from "../../../redux/slices/shopSlice";
+import {
+  setIsUploading,
+  updateNewArrivals,
+} from "../../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function AdminPost() {
@@ -32,6 +35,7 @@ function AdminPost() {
 
   const handleSuccess = (e) => {
     dispatch(setIsUploading(false));
+    dispatch(updateNewArrivals(e));
     console.log(e);
   };
 
