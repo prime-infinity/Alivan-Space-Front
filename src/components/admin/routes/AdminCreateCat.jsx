@@ -14,6 +14,7 @@ function AdminCreateCat() {
   const categories = useSelector((state) => state.shop.categories);
   const dispatch = useDispatch();
   const [error, setErrors] = useState(null);
+  const [updated, setIsUpdated] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -25,6 +26,7 @@ function AdminCreateCat() {
   };
 
   const handleSuccess = (e) => {
+    setIsUpdated(true);
     dispatch(addToCategories(e));
     setFormData({
       name: "",
@@ -33,6 +35,7 @@ function AdminCreateCat() {
 
   const submitDetails = (e) => {
     e.preventDefault();
+    setIsUpdated(false);
     setErrors(null);
 
     createCategory(formData, authState.token)
@@ -77,6 +80,13 @@ function AdminCreateCat() {
             <div className="row">
               <div className="col-12 text-center">
                 {error ? errorDiv : null}
+                {updated && (
+                  <div className="col-12 text-success">
+                    <span>
+                      <i className="fa fa-check me-2 "></i> Category Added
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mb-3 mt-4">

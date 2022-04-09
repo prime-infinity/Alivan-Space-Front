@@ -6,6 +6,7 @@ import { updateAddress } from "../../../redux/slices/userdetailsSlice";
 function ProfileAddress() {
   const authState = useSelector((state) => state.auth.auth);
   const userDetails = useSelector((state) => state.userdetails.details);
+  const [updated, setIsUpdated] = useState(false);
   const dispatch = useDispatch();
 
   const [error, setErrors] = useState(null);
@@ -23,11 +24,13 @@ function ProfileAddress() {
   };
 
   const handleSuccess = (e) => {
+    setIsUpdated(true);
     dispatch(updateAddress(e));
   };
 
   const submitDetails = (e) => {
     e.preventDefault();
+    setIsUpdated(false);
     setErrors(null);
 
     submitUserAddress(formData, authState.token)
@@ -128,6 +131,13 @@ function ProfileAddress() {
         </div>
         <div className="row text-center">
           <div className="col-12">{error ? errorDiv : null}</div>
+          {updated && (
+            <div className="col-12 text-success">
+              <span>
+                <i className="fa fa-check me-2 "></i> Address Udated
+              </span>
+            </div>
+          )}
         </div>
         {/*<!-- /Shippping Address-->*/}
 

@@ -19,6 +19,7 @@ function AdminPost() {
   const dispatch = useDispatch();
   const [upload, setUpload] = useState(null);
   const [error, setErrors] = useState(null);
+  const [updated, setIsUpdated] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     sizes: [],
@@ -34,13 +35,23 @@ function AdminPost() {
   };
 
   const handleSuccess = (e) => {
+    setIsUpdated(true);
     dispatch(setIsUploading(false));
     dispatch(updateNewArrivals(e));
+    setFormData({
+      name: "",
+      sizes: [],
+      categories: [],
+      price: "",
+      description: "",
+    });
+    upload.clearPreviewPanel();
     //console.log(e);
   };
 
   const submitDetails = (e) => {
     e.preventDefault();
+    setIsUpdated(false);
     dispatch(setIsUploading(true));
     setErrors(null);
 
@@ -251,6 +262,13 @@ function AdminPost() {
             <div className="row">
               <div className="col-12 text-center">
                 {error ? errorDiv : null}
+                {updated && (
+                  <div className="col-12 text-success">
+                    <span>
+                      <i className="fa fa-check me-2 "></i> Item Uploaded
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mb-3 mt-4">

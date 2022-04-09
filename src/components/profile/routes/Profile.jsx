@@ -6,6 +6,7 @@ import { updateDetails } from "../../../redux/slices/userdetailsSlice";
 function ProfileProfile() {
   const authState = useSelector((state) => state.auth.auth);
   const userDetails = useSelector((state) => state.userdetails.details);
+  const [updated, setIsUpdated] = useState(false);
   const dispatch = useDispatch();
 
   const [error, setErrors] = useState(null);
@@ -22,11 +23,13 @@ function ProfileProfile() {
   };
 
   const handleSuccess = (e) => {
+    setIsUpdated(true);
     dispatch(updateDetails(e));
   };
 
   const submitDetails = (e) => {
     e.preventDefault();
+    setIsUpdated(false);
     setErrors(null);
 
     submitUserDetails(formData, authState.token)
@@ -113,7 +116,15 @@ function ProfileProfile() {
         </div>
         <div className="row text-center">
           <div className="col-12">{error ? errorDiv : null}</div>
+          {updated && (
+            <div className="col-12 text-success">
+              <span>
+                <i className="fa fa-check me-2 "></i> Details Udated
+              </span>
+            </div>
+          )}
         </div>
+
         {/*<!-- /.row-->*/}
         <div className="mt-4"></div>
         <button className="btn btn-dark" type="submit">
