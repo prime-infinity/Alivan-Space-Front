@@ -19,3 +19,9 @@
   text-align: center;
   bottom: 0%;
 }
+.fill-something {
+  max-height: -webkit-fill-available;
+  max-height: stretch;
+  max-height: -moz-available;
+  min-width: 100% !important;
+}

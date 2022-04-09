@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Loading from "../ui/Loading";
 import NetworkErr from "../ui/NetworkErr";
+import { Link } from "react-router-dom";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function NewArrivals() {
@@ -29,7 +30,9 @@ function NewArrivals() {
       </div>
       <div className="row justify-content-between align-items-center mb-4">
         <div className="col-12 col-md-auto text-center">
-          <a className="btn btn-link px-0">All products</a>
+          <Link to="/shop" className="btn btn-link px-0">
+            All products
+          </Link>
         </div>
       </div>
 
@@ -42,6 +45,18 @@ function NewArrivals() {
         ) : (
           <Loading />
         )}
+      </div>
+
+      <div className="row justify-content-center">
+        <div className="col-12">
+          <div className="card-columns">
+            {newItems.map((item) => (
+              <div className="card" key={item._id}>
+                <Item item={item} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Quickview Modal    */}

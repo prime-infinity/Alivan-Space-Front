@@ -1,16 +1,21 @@
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Footer() {
+  const authState = useSelector((state) => state.auth.auth);
   const location = useLocation();
   const notAllowed = () => {
-    return location.pathname === "/admin" ||
+    /*return location.pathname === "/admin" ||
       location.pathname === "/admin/orders" ||
       location.pathname === "/admin/post" ||
       location.pathname === "/admin/createcat" ||
       location.pathname === "/shop"
       ? true
-      : false;
+      : false;*/
+
+    return location.pathname !== "/" ? true : false;
   };
 
   return notAllowed() ? null : (
@@ -170,30 +175,53 @@ function Footer() {
                       Your account
                     </h6>
                     <ul className="list-unstyled text-sm pt-2 pt-lg-0">
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          Login
-                        </a>
-                      </li>
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          Register
-                        </a>
-                      </li>
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          Wishlist
-                        </a>
-                      </li>
-                      <li className="mb-2">
-                        {" "}
-                        <a className="text-muted text-dark-hover link-animated">
-                          Our Products
-                        </a>
-                      </li>
+                      {!authState && (
+                        <li className="mb-2">
+                          {" "}
+                          <a
+                            className="text-muted text-dark-hover link-animated"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal"
+                          >
+                            Login
+                          </a>
+                        </li>
+                      )}
+                      {!authState && (
+                        <li className="mb-2">
+                          {" "}
+                          <a
+                            className="text-muted text-dark-hover link-animated"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal"
+                          >
+                            Register
+                          </a>
+                        </li>
+                      )}
+                      {authState && (
+                        <li className="mb-2">
+                          {" "}
+                          <Link
+                            to="/profile/profile"
+                            className="text-muted text-dark-hover link-animated"
+                          >
+                            Your Profile
+                          </Link>
+                        </li>
+                      )}
+                      {authState && (
+                        <li className="mb-2">
+                          {" "}
+                          <Link
+                            to="/profile/wishlist"
+                            className="text-muted text-dark-hover link-animated"
+                          >
+                            Your Wishlist
+                          </Link>
+                        </li>
+                      )}
+
                       <li className="mb-2">
                         {" "}
                         <a className="text-muted text-dark-hover link-animated">

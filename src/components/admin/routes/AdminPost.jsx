@@ -36,7 +36,7 @@ function AdminPost() {
   const handleSuccess = (e) => {
     dispatch(setIsUploading(false));
     dispatch(updateNewArrivals(e));
-    console.log(e);
+    //console.log(e);
   };
 
   const submitDetails = (e) => {
@@ -125,7 +125,7 @@ function AdminPost() {
               <input
                 type="file"
                 className="custom-file-container__custom-file__custom-file-input"
-                accept="image/*"
+                accept="image/jpeg,image/jpg"
                 multiple
                 aria-label="Choose File"
               />

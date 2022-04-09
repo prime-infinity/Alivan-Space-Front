@@ -8,7 +8,7 @@ function Categories() {
               {/*<p className="subtitle text-sm" style={{ color: "#425c81" }}>
                 Denim
               </p>*/}
-              <h2 className="mb-0 theme-text-color">Jackets </h2>
+              <h2 className="mb-0 ">Jackets </h2>
             </div>
             <div className="banner-bg-native">
               <img className="img-fluid" src="images/e.jpg" alt="" />
@@ -21,7 +21,7 @@ function Categories() {
               {/*<p className="subtitle text-sm" style={{ color: "#94585e" }}>
                 Get ready for winter
               </p>*/}
-              <h2 className="mb-0 theme-text-color">Coats </h2>
+              <h2 className="mb-0 text-white">Coats </h2>
             </div>
             <div className="banner-bg-native">
               <img className="img-fluid" src="images/f.jpg" alt="" />
@@ -34,7 +34,7 @@ function Categories() {
               {/*<p className="subtitle text-sm" style={{ color: "#9e9056" }}>
                 Let yourself shine
               </p>*/}
-              <h2 className="mb-0 theme-text-color">Dresses </h2>
+              <h2 className="mb-0 ">Dresses </h2>
             </div>
             <div className="banner-bg-native">
               <img className="img-fluid" src="images/g.jpg" alt="" />
@@ -47,7 +47,7 @@ function Categories() {
               {/*<p className="subtitle text-sm" style={{ color: "#9c5f8f" }}>
                 Latest denim trends
               </p>*/}
-              <h2 className="mb-0 theme-text-color">Jeans </h2>
+              <h2 className="mb-0 text-white">Jeans </h2>
             </div>
             <div className="banner-bg-native">
               <img className="img-fluid" src="images/h.jpg" alt="" />
@@ -60,7 +60,7 @@ function Categories() {
               {/*<p className="subtitle text-sm" style={{ color: "#418a70" }}>
                 Bags &amp; accessories
             </p>*/}
-              <h2 className="mb-0 theme-text-color">Bags </h2>
+              <h2 className="mb-0 ">Bags </h2>
             </div>
             <div className="banner-bg-native" style={{ top: "0%" }}>
               <img className="img-fluid" src="images/i.jpg" alt="" />
@@ -73,7 +73,7 @@ function Categories() {
               {/*<p className="subtitle text-sm" style={{ color: "#775a3d" }}>
                 Shoes &amp; footwear
           </p>*/}
-              <h2 className="mb-0 theme-text-color">Shoes </h2>
+              <h2 className="mb-0 text-white">Shoes </h2>
             </div>
             <div className="banner-bg-native">
               <img className="img-fluid" src="images/j.jpg" alt="" />

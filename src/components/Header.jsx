@@ -132,11 +132,11 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav mt-3 mt-lg-0">
-              <li className="nav-item dropdown active">
+              {/*<li className="nav-item dropdown active">
                 <Link to="/" className="nav-link ">
                   Home
                 </Link>
-              </li>
+              </li>*/}
               <li className="nav-item dropdown">
                 <Link to="/shop" className="nav-link ">
                   Shop

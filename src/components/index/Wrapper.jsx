@@ -21,11 +21,14 @@ function Wrapper() {
               className="row h-100 align-items-center"
               data-swiper-parallax="-500"
             >
-              <div className="col-lg-6 ms-auto theme-text-color">
+              <div className="col-lg-6 ms-auto text-white">
                 <p className="subtitle letter-spacing-3 mb-3 font-weight-light">
                   Where Clothes and Accessories live
                 </p>
-                <h2 className="display-3" style={{ lineHeight: "1" }}>
+                <h2
+                  className="display-3 theme-text-color"
+                  style={{ lineHeight: "1" }}
+                >
                   Alivan Space
                 </h2>
                 {/*<p className="text-muted mb-5">
@@ -57,7 +60,7 @@ function Wrapper() {
                 {/*<h2 className="display-3" style={{ lineHeight: "1" }}>
                   Blouses &amp; Tops
                 </h2>*/}
-                <p className="mb-5 subtitle">
+                <p className="mb-5 subtitle text-white">
                   Don't just focus on the big picture, Checkout all the smaller
                   details that will complete you
                 </p>
@@ -80,11 +83,12 @@ function Wrapper() {
               data-swiper-parallax="-500"
             >
               <div className="col-lg-6">
-                <p className="subtitle letter-spacing-3 mb-2 text-dark font-weight-light">
+                <p className="subtitle letter-spacing-3 mb-2 text-white font-weight-light">
                   More that just Clothes
                 </p>
                 <h2 className="display-3 mb-5" style={{ lineHeight: "1" }}>
-                  A Way Of <span className="theme-text-color">Life!</span>
+                  <span className="text-white">A Way Of </span>
+                  <span className="theme-text-color">Life!</span>
                 </h2>
                 <Link to="/shop" className="btn btn-dark p-3">
                   Start shopping
@@ -109,7 +113,8 @@ function Wrapper() {
                   Blue &amp; White
                 </p>*/}
                 <h2 className="display-2" style={{ lineHeight: "1" }}>
-                  Become The <span className="theme-text-color">Trend</span>
+                  <span className="text-white">Become The</span>{" "}
+                  <span className="theme-text-color">Trend</span>
                 </h2>
                 {/*<a className="btn btn-dark">Start shopping</a>*/}
               </div>

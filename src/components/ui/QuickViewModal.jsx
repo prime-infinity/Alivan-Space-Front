@@ -6,7 +6,7 @@ import {
   saveCartToLocal,
   setWish,
 } from "../../redux/slices/shopSlice";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import LazyLoad from "react-lazyload";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function QuickViewModal({ closeModal, item }) {
@@ -73,12 +73,13 @@ function QuickViewModal({ closeModal, item }) {
                             index === 0 ? "active" : null
                           }`}
                         >
-                          <LazyLoadImage
+                          <LazyLoad
                             className="d-block w-100"
-                            alt={"product-image"}
+                            height={300}
                             placeholder={<Loading />}
-                            src={img}
-                          />
+                          >
+                            <img src={img} alt="" />
+                          </LazyLoad>
                         </div>
                       ))}
                     </div>
