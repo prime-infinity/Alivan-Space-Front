@@ -12,12 +12,37 @@ import { useState } from "react";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function QuickViewModal({ closeModal, item }) {
   const authState = useSelector((state) => state.auth.auth);
+  const wish = useSelector((state) => state.shop.wish);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
+  const [selectSize, setSelSize] = useState(item.sizes[0].split(",")[0]);
+  const [addedTocart, setAddedTocart] = useState(false);
+  const [addedToWish, setAddedToWish] = useState(false);
+
+  const closeOptions = () => {
+    setAddedTocart(true);
+  };
+
+  const itemInWishlist = (e) => {
+    if (wish) {
+      if (wish.items.includes(e)) {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  };
+
+  const addItemToWish = (e) => {
+    console.log(e);
+    addToWish(e);
+    setAddedToWish(true);
+  };
 
   const addTooCart = (e) => {
     dispatch(addToCart(e));
     dispatch(saveCartToLocal());
+    closeOptions();
   };
 
   const configQuantity = (e) => {
@@ -153,6 +178,8 @@ function QuickViewModal({ closeModal, item }) {
                       <select
                         className="form-control"
                         data-style="btn-selectpicker"
+                        value={selectSize}
+                        onChange={(e) => setSelSize(e.target.value)}
                       >
                         {item.sizes[0].split(",").map((size, index) => (
                           <option key={index} value={size}>
@@ -163,25 +190,42 @@ function QuickViewModal({ closeModal, item }) {
                     </div>
                   </div>
                   <div className="input-group w-100 mb-4">
-                    <input
-                      className="form-control form-control-lg detail-quantity"
-                      name="items"
-                      type="number"
-                      value={quantity}
-                      onChange={(e) => configQuantity(e.target.value)}
-                    />
+                    {!addedTocart && (
+                      <input
+                        className="form-control form-control-lg detail-quantity"
+                        name="items"
+                        type="number"
+                        value={quantity}
+                        onChange={(e) => configQuantity(e.target.value)}
+                      />
+                    )}
                     <div className="flex-grow-1">
                       <div className="d-grid h-100">
                         {quantity > 0 && quantity < 11 && (
-                          <button
-                            onClick={() => addTooCart(item)}
-                            className="btn btn-dark"
-                            type="button"
-                          >
-                            {" "}
-                            <i className="fa fa-shopping-cart me-2"></i>Add to
-                            Cart
-                          </button>
+                          <div>
+                            {addedTocart ? (
+                              <button
+                                className="btn btn-success w-100 h-100"
+                                type="button"
+                              >
+                                {" "}
+                                <i className="fa fa-check me-2"></i>Added to
+                                Cart
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() =>
+                                  addTooCart({ ...item, quantity, selectSize })
+                                }
+                                className="btn btn-dark w-100 h-100"
+                                type="button"
+                              >
+                                {" "}
+                                <i className="fa fa-shopping-cart me-2"></i>Add
+                                to Cart
+                              </button>
+                            )}
+                          </div>
                         )}
                       </div>
                     </div>
@@ -189,10 +233,21 @@ function QuickViewModal({ closeModal, item }) {
                   <div className="row mb-4">
                     <div className="col-6">
                       {authState !== null && (
-                        <a onClick={() => addToWish(item._id)}>
-                          {" "}
-                          <i className="far fa-heart me-2"></i>Add to wishlist{" "}
-                        </a>
+                        <div id={item._id}>
+                          {addedToWish || itemInWishlist(item._id) ? (
+                            <a>
+                              {" "}
+                              <i className="fa fa-check me-2 text-success"></i>
+                              <span className="text-success">In wishlist </span>
+                            </a>
+                          ) : (
+                            <a onClick={() => addItemToWish(item._id)}>
+                              {" "}
+                              <i className="far fa-heart me-2"></i>Add to
+                              wishlist{" "}
+                            </a>
+                          )}
+                        </div>
                       )}
                     </div>
                   </div>

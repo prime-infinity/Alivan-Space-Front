@@ -86,11 +86,11 @@ function CartModal() {
                           <a className="navbar-cart-product-link text-dark link-animated">
                             {car.name}
                           </a>
-                          {/*<small className="d-block text-muted">
-                          Quantity: 1{" "}
-                        </small>*/}
+                          <small className="d-block text-muted">
+                            Quantity: {car.quantity}{" "}
+                          </small>
                           <strong className="d-block text-sm">
-                            ${car.price}
+                            ${car.price * car.quantity}
                           </strong>
                         </div>
                       </div>
@@ -104,10 +104,11 @@ function CartModal() {
             <div className="modal-footer sidebar-cart-footer shadow">
               <div className="w-100">
                 <h5 className="mb-4">
-                  Subtotal:{" "}
+                  Subtotal:$
                   <span className="float-right">
                     {cart.reduce(
-                      (accumulator, ele) => accumulator + ele.price,
+                      (accumulator, ele) =>
+                        accumulator + ele.price * ele.quantity,
                       0
                     )}
                   </span>
