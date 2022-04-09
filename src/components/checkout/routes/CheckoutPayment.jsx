@@ -31,6 +31,8 @@ function CheckoutPayment() {
 
   const sumbitCard = (e) => {
     e.preventDefault();
+    //card verfication
+
     dispatch(setPayment(formData));
     navigate("/checkout/review");
   };

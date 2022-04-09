@@ -15,7 +15,7 @@ export const checkSlice = createSlice({
       state.delivery = action.payload;
     },
     setPayment: (state, action) => {
-      state.delivery = action.payload;
+      state.payment = action.payload;
     },
   },
 });

@@ -7,8 +7,8 @@ function CheckoutReview() {
   const checkPayment = useSelector((state) => state.check.payment);
 
   const placeOrder = () => {
-    //console.log(checkAddress);
-    //console.log(checkDelivery);
+    console.log(checkAddress);
+    console.log(checkDelivery);
     console.log(checkPayment);
   };
 
