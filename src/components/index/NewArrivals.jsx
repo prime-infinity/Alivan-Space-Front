@@ -37,25 +37,19 @@ function NewArrivals() {
       </div>
 
       <div className="row">
-        {/* items */}
-        {newItems === "Network Error" ? (
-          <NetworkErr />
-        ) : newItems != null ? (
-          newItems.map((item) => <Item key={item._id} item={item} />)
-        ) : (
-          <Loading />
-        )}
-      </div>
-
-      <div className="row justify-content-center">
         <div className="col-12">
-          <div className="card-columns">
-            {newItems.map((item) => (
-              <div className="card" key={item._id}>
-                <Item item={item} />
-              </div>
-            ))}
-          </div>
+          {/* items */}
+          {newItems === "Network Error" ? (
+            <NetworkErr />
+          ) : newItems != null ? (
+            <div className="card-columns">
+              {newItems.map((item) => (
+                <Item key={item._id} item={item} />
+              ))}
+            </div>
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
 

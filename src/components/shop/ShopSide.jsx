@@ -26,7 +26,7 @@ function ShopSide() {
           ) : categories !== null ? (
             categories.map((cat, index) => (
               <div key={index} className="sidebar-icon-menu mt-4 mt-lg-0">
-                <div className="sidebar-icon-menu-item">
+                <div className="sidebar-icon-menu-item border ps-2 mt-3 hover-theme">
                   <div className="d-flex align-items-center">
                     <a className="sidebar-icon-menu-link fw-bold me-2">
                       {cat.name}

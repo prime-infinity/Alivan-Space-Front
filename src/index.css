@@ -25,3 +25,8 @@
   max-height: -moz-available;
   min-width: 100% !important;
 }
+.hover-theme:hover {
+  transition: 0.5s ease;
+  background-color: #7fffd4 !important;
+  opacity: 0.5;
+}

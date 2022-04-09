@@ -7,15 +7,21 @@ import {
   setWish,
 } from "../../redux/slices/shopSlice";
 import LazyLoad from "react-lazyload";
+import { useState } from "react";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function QuickViewModal({ closeModal, item }) {
   const authState = useSelector((state) => state.auth.auth);
   const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
 
   const addTooCart = (e) => {
     dispatch(addToCart(e));
     dispatch(saveCartToLocal());
+  };
+
+  const configQuantity = (e) => {
+    setQuantity(e);
   };
 
   const addToWish = (e) => {
@@ -73,12 +79,8 @@ function QuickViewModal({ closeModal, item }) {
                             index === 0 ? "active" : null
                           }`}
                         >
-                          <LazyLoad
-                            className="d-block w-100"
-                            height={300}
-                            placeholder={<Loading />}
-                          >
-                            <img src={img} alt="" />
+                          <LazyLoad height={300} placeholder={<Loading />}>
+                            <img className="d-block w-100" src={img} alt="" />
                           </LazyLoad>
                         </div>
                       ))}
@@ -114,7 +116,7 @@ function QuickViewModal({ closeModal, item }) {
                   <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                     <ul className="list-inline mb-2 mb-sm-0">
                       <li className="list-inline-item h4 fw-light mb-0">
-                        ${item.price}
+                        ${item.price * quantity}
                       </li>
                       {/*<li className="list-inline-item text-muted fw-light">
                         <del>$90.00</del>
@@ -165,19 +167,22 @@ function QuickViewModal({ closeModal, item }) {
                       className="form-control form-control-lg detail-quantity"
                       name="items"
                       type="number"
-                      defaultValue="1"
+                      value={quantity}
+                      onChange={(e) => configQuantity(e.target.value)}
                     />
                     <div className="flex-grow-1">
                       <div className="d-grid h-100">
-                        <button
-                          onClick={() => addTooCart(item)}
-                          className="btn btn-dark"
-                          type="button"
-                        >
-                          {" "}
-                          <i className="fa fa-shopping-cart me-2"></i>Add to
-                          Cart
-                        </button>
+                        {quantity > 0 && quantity < 11 && (
+                          <button
+                            onClick={() => addTooCart(item)}
+                            className="btn btn-dark"
+                            type="button"
+                          >
+                            {" "}
+                            <i className="fa fa-shopping-cart me-2"></i>Add to
+                            Cart
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

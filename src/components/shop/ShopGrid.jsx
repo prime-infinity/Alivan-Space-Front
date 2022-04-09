@@ -24,9 +24,13 @@ function ShopGrid({ allItems, pageNumber, pagePrevious, pageNext }) {
 
       <div className="row">
         {/*<!-- product-->*/}
-        {allItems.map((item) => (
-          <Item key={item._id} item={item} />
-        ))}
+        <div className="col-12">
+          <div className="card-columns">
+            {allItems.map((item) => (
+              <Item key={item._id} item={item} />
+            ))}
+          </div>
+        </div>
       </div>
       <nav
         className="d-flex justify-content-center mb-5 mt-3"
