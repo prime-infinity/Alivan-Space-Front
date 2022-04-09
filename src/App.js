@@ -24,6 +24,13 @@ import AdminCreateCat from "./components/admin/routes/AdminCreateCat";
 import AdminPost from "./components/admin/routes/AdminPost";
 import AdminAllItems from "./components/admin/routes/AdminAllItems";
 
+//checkout
+import Checkout from "./components/checkout/Checkout";
+import CheckoutAddress from "./components/checkout/routes/CheckoutAddress";
+import CheckoutDelivery from "./components/checkout/routes/CheckoutDelivery";
+import CheckoutPayment from "./components/checkout/routes/CheckoutPayment";
+import CheckoutReview from "./components/checkout/routes/CheckoutReview";
+
 import ProtectedRoute from "./helpers/protectedRoute";
 import { useEffect } from "react";
 
@@ -66,6 +73,22 @@ function App() {
           <Route path="orders" element={<ProfileOrders />} />
           <Route path="address" element={<ProfileAddress />} />
           <Route path="wishlist" element={<ProfileWishlist />} />
+          <Route path="*" element={<p>There's nothing here: 404!</p>} />
+        </Route>
+
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute auth={authState}>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<CheckoutAddress />} />
+          <Route path="address" element={<CheckoutAddress />} />
+          <Route path="delivery" element={<CheckoutDelivery />} />
+          <Route path="payment" element={<CheckoutPayment />} />
+          <Route path="review" element={<CheckoutReview />} />
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Route>
 

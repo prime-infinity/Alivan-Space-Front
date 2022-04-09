@@ -2,6 +2,7 @@ import { submitUserAddress } from "../../../helpers/auth";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateAddress } from "../../../redux/slices/userdetailsSlice";
+import { us } from "../../../utils/us";
 
 function ProfileAddress() {
   const authState = useSelector((state) => state.auth.auth);
@@ -67,6 +68,25 @@ function ProfileAddress() {
             <label className="form-label" htmlFor="state_invoice">
               State
             </label>
+            <select
+              className="form-control"
+              id="state_invoice"
+              data-style="btn-selectpicker"
+              value={formData.state}
+              onChange={(e) =>
+                setFormData({ ...formData, state: e.target.value })
+              }
+            >
+              {us.map(({ name, abbreviation }, index) => (
+                <option key={index} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
+
+            {/*<label className="form-label" htmlFor="state_invoice">
+              State
+            </label>
             <input
               value={formData.state}
               onChange={(e) =>
@@ -77,7 +97,7 @@ function ProfileAddress() {
               name="state_invoice"
               placeholder="State"
               id="state_invoice"
-            />
+            />*/}
           </div>
           <div className="mb-3 col-md-6">
             <label className="form-label" htmlFor="city_invoice">

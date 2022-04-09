@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeCart, saveCartToLocal } from "../../redux/slices/shopSlice";
+import { Link } from "react-router-dom";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function CartModal() {
@@ -115,7 +116,9 @@ function CartModal() {
                 </h5>
                 <div className="d-grid gap-3">
                   {/*<a className="btn btn-outline-dark">View cart</a>*/}
-                  <a className="btn btn-dark">Checkout</a>
+                  <Link to="/checkout/address" className="btn btn-dark">
+                    Checkout
+                  </Link>
                 </div>
               </div>
             </div>
