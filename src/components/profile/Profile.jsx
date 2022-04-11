@@ -6,11 +6,13 @@ import Loading from "../ui/Loading";
 import { useEffect } from "react";
 import { setUserDetail } from "../../redux/slices/userdetailsSlice";
 import NetworkErr from "../ui/NetworkErr";
+import { getOrders } from "../../redux/slices/orderSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Profile() {
   const authState = useSelector((state) => state.auth.auth);
   const userDetails = useSelector((state) => state.userdetails.details);
+  const orders = useSelector((state) => state.order.orders);
   const location = useLocation();
   const dispatch = useDispatch();
 
@@ -24,6 +26,12 @@ function Profile() {
       dispatch(setUserDetail(authState.token));
     }
   }, [userDetails, dispatch, authState.token]);
+
+  useEffect(() => {
+    if (orders === null) {
+      dispatch(getOrders(authState.token));
+    }
+  }, [orders, dispatch, authState.token]);
 
   const inProfile = () => {
     return location.pathname === "/profile/profile" ? true : false;
@@ -155,7 +163,7 @@ function Profile() {
                     </span>
 
                     <div className="badge rounded-pill bg-dark fw-normal px-3">
-                      5
+                      {orders && orders.length}
                     </div>
                   </Link>
                   <Link

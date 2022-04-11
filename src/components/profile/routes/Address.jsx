@@ -12,7 +12,6 @@ function ProfileAddress() {
 
   const [error, setErrors] = useState(null);
   const [formData, setFormData] = useState({
-    country: userDetails[1].country,
     state: userDetails[1].state,
     city: userDetails[1].city,
     street: userDetails[1].street,
@@ -49,21 +48,6 @@ function ProfileAddress() {
         {/*<!-- Shipping Address-->*/}
         <h3 className="mb-4"> Shipping address </h3>
         <div className="row">
-          <div className="mb-3 col-md-6">
-            <label className="form-label" htmlFor="country_invoice">
-              Country
-            </label>
-            <input
-              value={formData.country}
-              onChange={(e) =>
-                setFormData({ ...formData, country: e.target.value })
-              }
-              className="form-control"
-              type="text"
-              name="country_invoice"
-              id="country_invoice"
-            />
-          </div>
           <div className="mb-3 col-md-6">
             <label className="form-label" htmlFor="state_invoice">
               State

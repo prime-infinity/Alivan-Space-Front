@@ -26,13 +26,18 @@ import AdminAllItems from "./components/admin/routes/AdminAllItems";
 
 //checkout
 import Checkout from "./components/checkout/Checkout";
+import OrderConfirmed from "./components/checkout/OrderConfirmed";
 import CheckoutAddress from "./components/checkout/routes/CheckoutAddress";
 import CheckoutDelivery from "./components/checkout/routes/CheckoutDelivery";
 import CheckoutPayment from "./components/checkout/routes/CheckoutPayment";
 import CheckoutReview from "./components/checkout/routes/CheckoutReview";
 
+import ViewOrder from "./components/ui/ViewOrder";
+
 import ProtectedRoute from "./helpers/protectedRoute";
+import ProtectedRouteAdmin from "./helpers/ProtectedRouteAdmin";
 import { useEffect } from "react";
+import ViewItem from "./components/ui/ViewItem";
 
 function App() {
   const authState = useSelector((state) => state.auth.auth);
@@ -60,6 +65,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/shop" element={<ShopAll />} />
+        <Route path="/checkout-confirmed" element={<OrderConfirmed />} />
+        <Route path="/vieworder" element={<ViewOrder />} />
+        <Route path="/viewitem" element={<ViewItem />} />
+
         <Route
           path="/profile"
           element={
@@ -93,7 +102,14 @@ function App() {
         </Route>
 
         {/**admin routes */}
-        <Route path="/admin" element={<Admin />}>
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRouteAdmin auth={authState?.isAdmin}>
+              <Admin />
+            </ProtectedRouteAdmin>
+          }
+        >
           <Route index element={<AdminOrders />} />
           <Route path="orders" element={<AdminOrders />} />
           <Route path="post" element={<AdminPost />} />

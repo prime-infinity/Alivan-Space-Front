@@ -1,9 +1,14 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getAllOrders } from "../../redux/slices/orderSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Admin() {
+  const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth.auth);
+  const orders = useSelector((state) => state.order.allOrder);
+
   const location = useLocation();
 
   const inOrders = () => {
@@ -18,6 +23,12 @@ function Admin() {
   const inAll = () => {
     return location.pathname === "/admin/allitems" ? true : false;
   };
+
+  useEffect(() => {
+    if (orders === null) {
+      dispatch(getAllOrders(authState.token));
+    }
+  }, [authState, dispatch, orders]);
 
   return (
     <div>
@@ -96,7 +107,7 @@ function Admin() {
                           d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                         />
                       </svg>
-                      See Orders
+                      See All Orders
                     </span>
 
                     <div className="badge rounded-pill bg-dark fw-normal px-3">

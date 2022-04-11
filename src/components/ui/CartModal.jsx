@@ -90,6 +90,9 @@ function CartModal() {
                           <small className="d-block text-muted">
                             Quantity: {car.quantity}{" "}
                           </small>
+                          <span className="text-muted text-sm">
+                            Size: {car.selectSize}
+                          </span>
                           <strong className="d-block text-sm">
                             ${car.price * car.quantity}
                           </strong>
@@ -117,7 +120,14 @@ function CartModal() {
                 <div className="d-grid gap-3">
                   {/*<a className="btn btn-outline-dark">View cart</a>*/}
                   <Link to="/checkout/address" className="btn btn-dark">
-                    Checkout
+                    <span
+                      type="button"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      {" "}
+                      Checkout{" "}
+                    </span>
                   </Link>
                 </div>
               </div>

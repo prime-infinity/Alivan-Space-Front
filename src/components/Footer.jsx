@@ -22,22 +22,22 @@ function Footer() {
     <footer>
       <div className="py-5 py-lg-6 bg-gray-100">
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center">
             <div className="col-lg-3 col-sm-6 py-4 service-column">
-              {/*<svg className="svg-icon service-icon">
-                <use xlink:href="/#delivery-time-1"> </use>
-    </svg>*/}
-              <div className="service-text">
-                <h6 className="text-sm mb-1">Free shipping &amp; return</h6>
-                <p className="text-muted fw-light text-sm mb-0">
-                  Free Shipping over $300
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6 py-4 service-column">
-              {/*<svg className="svg-icon service-icon">
-                <use xlink:href="/#money-1"> </use>
-</svg>*/}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="svg-icon service-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
               <div className="service-text">
                 <h6 className="text-sm mb-1">Money back guarantee</h6>
                 <p className="text-muted fw-light text-sm mb-0">
@@ -46,9 +46,20 @@ function Footer() {
               </div>
             </div>
             <div className="col-lg-3 col-sm-6 py-4 service-column">
-              {/*<svg className="svg-icon service-icon">
-                <use xlink:href="/#special-price-1"> </use>
-</svg>*/}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="svg-icon service-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
               <div className="service-text">
                 <h6 className="text-sm mb-1">Best prices</h6>
                 <p className="text-muted fw-light text-sm mb-0">
@@ -57,9 +68,20 @@ function Footer() {
               </div>
             </div>
             <div className="col-lg-3 col-sm-6 py-4 service-column">
-              {/*<svg className="svg-icon service-icon">
-                <use xlink:href="/#customer-support-1"> </use>
-</svg>*/}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="svg-icon service-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
               <div className="service-text">
                 <h6 className="text-sm mb-1">020-800-456-747</h6>
                 <p className="text-muted fw-light text-sm mb-0">

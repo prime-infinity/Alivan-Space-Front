@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { us } from "../../../utils/us";
 import { setAddress } from "../../../redux/slices/checkSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function CheckoutAddress() {
@@ -12,13 +12,11 @@ function CheckoutAddress() {
   const userDetails = useSelector((state) => state.userdetails.details);
 
   const [formData, setFormData] = useState({
-    country: userDetails[1].country,
     state: userDetails[1].state,
     city: userDetails[1].city,
     street: userDetails[1].street,
     zip: userDetails[1].zip,
-    firstname: userDetails[0].firstname,
-    lastname: userDetails[0].lastname,
+    fullname: `${userDetails[0].firstname} ${userDetails[0].lastname}`,
     phone: userDetails[0].phone,
     email: authState.email,
   });
@@ -39,9 +37,9 @@ function CheckoutAddress() {
             Full Name
           </label>
           <input
-            value={formData.firstname}
+            value={formData.fullname}
             onChange={(e) =>
-              setFormData({ ...formData, firstname: e.target.value })
+              setFormData({ ...formData, fullname: e.target.value })
             }
             className="form-control"
             type="text"
@@ -136,12 +134,21 @@ function CheckoutAddress() {
             name="phonenumber_invoice"
             placeholder="Phone Number"
             id="phonenumber_invoice"
+            value={formData.phone}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
           />
         </div>
       </div>
       {/*<!-- /Invoice Address-->*/}
 
       <div className="my-5 d-flex justify-content-between flex-column flex-lg-row">
+        <Link to="/" className="btn btn-link text-muted" href="cart.html">
+          {" "}
+          <i className="fa fa-angle-left me-2"></i>Back
+        </Link>
+
         <button className="btn btn-dark" type="submit">
           Choose delivery method<i className="fa fa-angle-right ms-2"></i>
         </button>

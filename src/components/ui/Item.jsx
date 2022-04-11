@@ -2,9 +2,11 @@ import { useState } from "react";
 import QuickViewModal from "./QuickViewModal";
 import LazyLoad from "react-lazyload";
 import Loading from "./Loading";
+import { useNavigate } from "react-router-dom";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Item({ item }) {
+  let navigate = useNavigate();
   const [isViewingItem, setIsViewItem] = useState(false);
   const [inItem, setItem] = useState(null);
 
@@ -15,6 +17,10 @@ function Item({ item }) {
   const closeModal = () => {
     setIsViewItem(false);
     setItem(false);
+  };
+
+  const viewItem = (item) => {
+    navigate("/viewitem", { state: { item } });
   };
 
   return (
@@ -31,7 +37,7 @@ function Item({ item }) {
               ) : item.state === 2 ? (
                 <div className="product-badge badge bg-dark">Sold out</div>
               ) : null}
-              <a>
+              <a onClick={() => viewItem(item)}>
                 <div className="product-swap-image">
                   <LazyLoad height={300} placeholder={<Loading />}>
                     <img

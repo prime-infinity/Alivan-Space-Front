@@ -45,7 +45,7 @@ function Checkout() {
             <li className="breadcrumb-item">Checkout</li>
             <li className="breadcrumb-item active">
               {inAddress()
-                ? "Invoice Address"
+                ? "Shipping Address"
                 : inDelivery()
                 ? "Delivery Method"
                 : inPayment()
@@ -59,7 +59,7 @@ function Checkout() {
           <div className="hero-content">
             <h1 className="hero-heading">
               {inAddress()
-                ? "Invoice Address"
+                ? "Shipping Address"
                 : inDelivery()
                 ? "Delivery Method"
                 : inPayment()

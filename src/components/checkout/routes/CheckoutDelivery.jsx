@@ -7,7 +7,8 @@ function CheckoutDelivery() {
   const dispatch = useDispatch();
 
   const radioChanged = (e) => {
-    dispatch(setDelivery(e.target.value));
+    let deliveryMethod = e.target.value;
+    dispatch(setDelivery({ deliveryMethod }));
     //navigate("/checkout/payment");
     //console.log(e.target.value);
   };

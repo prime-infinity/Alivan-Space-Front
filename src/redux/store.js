@@ -3,6 +3,7 @@ import authReducer from "./slices/authSlice";
 import userdetailsReducer from "./slices/userdetailsSlice";
 import shopReducer from "./slices/shopSlice";
 import checkReducer from "./slices/checkSlice";
+import orderReducer from "./slices/orderSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     userdetails: userdetailsReducer,
     shop: shopReducer,
     check: checkReducer,
+    order: orderReducer,
   },
 });
 

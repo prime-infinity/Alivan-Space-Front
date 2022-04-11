@@ -148,7 +148,7 @@ function Header() {
             </ul>
             <form className="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0">
               <div className="input-group input-group-underlined">
-                <input
+                {/*<input
                   className="form-control form-control-underlined ps-3"
                   type="text"
                   placeholder="Search"
@@ -172,7 +172,7 @@ function Header() {
                       clipRule="evenodd"
                     />
                   </svg>
-                </button>
+                </button>*/}
               </div>
             </form>
             <ul className="list-inline mb-0 d-none d-lg-block">

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function MenuModal() {
   return (
@@ -20,16 +22,12 @@ function MenuModal() {
           </div>
           <div className="modal-body px-5 pb-5">
             <div>
-              <h5 className="mb-5">Alivan Space</h5>
+              <h3 className="mb-5 theme-text-color">Alivan Space</h3>
               <ul className="nav flex-column mb-5">
                 <li className="nav-item active">
-                  <a className="nav-link ps-0">Home </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link ps-0">Link</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link ps-0 disabled">Disabled</a>
+                  <Link to="/" className="nav-link ps-0">
+                    Home{" "}
+                  </Link>
                 </li>
               </ul>
               <ul className="list-inline mb-4">
@@ -51,11 +49,11 @@ function MenuModal() {
                   020-800-456-747
                 </li>
               </ul>
-              <p className="text-sm text-muted mb-0">
+              {/*<p className="text-sm text-muted mb-0">
                 Samsa was a travelling salesman - and above it there hung a
                 picture that he had recently cut out of an illustrated magazine
                 and housed in a nice, gilded frame.
-              </p>
+              </p>*/}
             </div>
           </div>
         </div>

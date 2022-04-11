@@ -201,3 +201,53 @@ export async function getAllItems(pageNumber) {
     return e.message;
   }
 }
+
+//order routes
+export function placeOrderBack(data, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "orders/save_order", data, {
+        headers: { "x-auth-token": token },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
+
+//get orders of user
+export async function getUserOrders(token) {
+  try {
+    const { data } = await axios.get(backendHost + "orders/get_user_orders", {
+      headers: {
+        "x-auth-token": token,
+      },
+    });
+    return data;
+  } catch (e) {
+    //console.log(e.message);
+    return e.message;
+  }
+}
+
+//admin get all user orders
+
+export async function getAllUserOrders(token) {
+  try {
+    const { data } = await axios.get(
+      backendHost + "orders/get_all_user_orders",
+      {
+        headers: {
+          "x-auth-token": token,
+        },
+      }
+    );
+    return data;
+  } catch (e) {
+    //console.log(e.message);
+    return e.message;
+  }
+}

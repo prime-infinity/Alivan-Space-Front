@@ -15,7 +15,11 @@ function CheckoutPayment() {
   });
 
   const proceed = () => {
-    dispatch(setPayment("Pay on delivery"));
+    dispatch(
+      setPayment({
+        paymentMethod: { paymentdata: "Pay on delivery", method: 1 },
+      })
+    );
     navigate("/checkout/review");
   };
 
@@ -33,7 +37,7 @@ function CheckoutPayment() {
     e.preventDefault();
     //card verfication
 
-    dispatch(setPayment(formData));
+    dispatch(setPayment({ paymentMethod: { ...formData, method: 0 } }));
     navigate("/checkout/review");
   };
 
