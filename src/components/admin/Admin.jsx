@@ -39,6 +39,7 @@ function Admin() {
             <li className="breadcrumb-item">
               <Link to="/">Home</Link>
             </li>
+            <li className="breadcrumb-item">Admin</li>
             <li className="breadcrumb-item active">
               {inOrders()
                 ? "View all orders"
@@ -111,7 +112,7 @@ function Admin() {
                     </span>
 
                     <div className="badge rounded-pill bg-dark fw-normal px-3">
-                      5
+                      {orders && orders.length}
                     </div>
                   </Link>
 

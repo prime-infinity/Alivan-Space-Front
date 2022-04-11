@@ -1,13 +1,46 @@
 import { Link, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { changeOrderStatus } from "../../helpers/auth";
+import { changeStatusOfAllOrders } from "../../redux/slices/orderSlice";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 function ViewOrder() {
+  const dispatch = useDispatch();
+  const authState = useSelector((state) => state.auth.auth);
+  const [selectStatus, setSelStatus] = useState(0);
+  const [updated, setUpdated] = useState(false);
+  const [error, setErrors] = useState(null);
+
   const discount = 10;
   const { state } = useLocation();
   const order = state.order;
   const formatDate = (date) => {
     let dat = new Date(date);
     return dat.toLocaleDateString();
+  };
+
+  const handleErrors = (e) => {
+    e.response?.data ? setErrors(e.response.data) : setErrors(e.message);
+  };
+  const handleSuccess = (e) => {
+    //console.log(e);
+    setUpdated(true);
+    dispatch(changeStatusOfAllOrders(e));
+  };
+
+  const errorDiv = <small className="text-danger">{error}</small>;
+
+  const setStatus = () => {
+    console.log(selectStatus);
+    console.log(order._id);
+    changeOrderStatus({ id: order._id, status: selectStatus }, authState.token)
+      .then((res) => {
+        handleSuccess(res);
+      })
+      .catch((err) => {
+        handleErrors(err);
+      });
   };
 
   return (
@@ -42,12 +75,58 @@ function ViewOrder() {
                 </strong>
                 .
               </p>
-              <p className="text-muted">
-                If you have any questions, please feel free to contact us, our
-                customer service center is working for you 24/7.
-              </p>
+              {!authState.isAdmin && (
+                <p className="text-muted">
+                  If you have any questions, please feel free to contact us, our
+                  customer service center is working for you 24/7.
+                </p>
+              )}
             </div>
           </div>
+
+          {authState.isAdmin && (
+            <>
+              <div className="row mt-4 pt-4">
+                <div className="col-sm-6 col-lg-12 detail-option mb-4">
+                  <h6 className="detail-option-heading">Select Status</h6>
+                  <select
+                    className="form-control"
+                    data-style="btn-selectpicker"
+                    value={selectStatus}
+                    onChange={(e) => setSelStatus(e.target.value)}
+                  >
+                    {order.status !== 0 && <option value="0">Received</option>}
+                    {order.status !== 1 && (
+                      <option value="1">Being prepared</option>
+                    )}
+                    {order.status !== 2 && <option value="2">Cancelled</option>}
+                  </select>
+                </div>
+              </div>
+              <div className="row text-center">
+                <div className="col-12">{error ? errorDiv : null}</div>
+                {updated && (
+                  <div className="col-12 text-success">
+                    <span>
+                      <i className="fa fa-check me-2 "></i> Order Status Udated
+                    </span>
+                  </div>
+                )}
+              </div>
+              <div className="flex-grow-1">
+                <div className="d-grid h-100">
+                  <button
+                    onClick={setStatus}
+                    className="btn btn-dark btn-success w-100 h-100"
+                    type="button"
+                  >
+                    {" "}
+                    Set Status
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </section>
 
