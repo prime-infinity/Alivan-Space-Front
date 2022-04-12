@@ -48,7 +48,7 @@ function Item({ item }) {
                   </LazyLoad>
                   <LazyLoad height={300} placeholder={<Loading />}>
                     <img
-                      className="img-fluid fill-something"
+                      className="d-none d-md-block img-fluid fill-something"
                       src={item.imagesLocation[1]}
                       alt=""
                     />
