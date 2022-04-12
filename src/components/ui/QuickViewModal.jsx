@@ -1,4 +1,3 @@
-import Loading from "./Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { addToWishList } from "../../helpers/auth";
 import {
@@ -6,7 +5,6 @@ import {
   saveCartToLocal,
   setWish,
 } from "../../redux/slices/shopSlice";
-import LazyLoad from "react-lazyload";
 import { useState } from "react";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -104,9 +102,7 @@ function QuickViewModal({ closeModal, item }) {
                             index === 0 ? "active" : null
                           }`}
                         >
-                          <LazyLoad height={300} placeholder={<Loading />}>
-                            <img className="d-block w-100" src={img} alt="" />
-                          </LazyLoad>
+                          <img className="d-block w-100" src={img} alt="" />
                         </div>
                       ))}
                     </div>
