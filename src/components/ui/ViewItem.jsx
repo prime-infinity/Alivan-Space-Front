@@ -263,7 +263,7 @@ function ViewItem() {
                         <div className="col-12 text-success">
                           <span>
                             <i className="fa fa-check me-2 "></i> Item Status
-                            Udated
+                            Updated
                           </span>
                         </div>
                       )}

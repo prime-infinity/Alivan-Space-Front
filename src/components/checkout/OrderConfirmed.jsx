@@ -40,7 +40,7 @@ function OrderConfirmed() {
             Thank you, {authState.name}. Your order is confirmed.
           </p>
           <p className="lead mb-5">
-            Your order hasn't shipped yet but we will send you ane email when it
+            Your order hasn't shipped yet but we will send you an email when it
             does.{" "}
           </p>
           <p className="mb-6">
