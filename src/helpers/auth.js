@@ -170,6 +170,22 @@ export function changeOrderStatus(data, token) {
       });
   });
 }
+export function changeItemStatus(data, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "admin/change_item_status", data, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
 
 //shop routes
 //get all shop categories

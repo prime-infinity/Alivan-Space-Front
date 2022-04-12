@@ -2,11 +2,13 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addToWishList } from "../../helpers/auth";
+import { changeItemStatus } from "../../helpers/auth";
 
 import {
   addToCart,
   saveCartToLocal,
   setWish,
+  setAdminHasUpdatedItem,
 } from "../../redux/slices/shopSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -14,13 +16,41 @@ import {
 function ViewItem() {
   const { state } = useLocation();
   const dispatch = useDispatch();
-  const item = state.item;
+  const [item, updateItem] = useState(state.item);
   const authState = useSelector((state) => state.auth.auth);
   const wish = useSelector((state) => state.shop.wish);
   const [quantity, setQuantity] = useState(1);
   const [selectSize, setSelSize] = useState(item.sizes[0].split(",")[0]);
   const [addedTocart, setAddedTocart] = useState(false);
+  const [selectStatus, setSelStatus] = useState(null);
+  const [updated, setUpdated] = useState(false);
+  const [error, setErrors] = useState(null);
+
   const [addedToWish, setAddedToWish] = useState(false);
+
+  const handleErrors = (e) => {
+    e.response?.data ? setErrors(e.response.data) : setErrors(e.message);
+  };
+  const handleSuccess = (e) => {
+    console.log(e);
+    setUpdated(true);
+    updateItem({ ...item, state: parseInt(selectStatus) });
+    dispatch(setAdminHasUpdatedItem(Math.random()));
+  };
+
+  const setStatus = () => {
+    /*console.log(selectStatus);
+    console.log(order._id);*/
+    changeItemStatus({ id: item._id, status: selectStatus }, authState.token)
+      .then((res) => {
+        handleSuccess(res);
+      })
+      .catch((err) => {
+        handleErrors(err);
+      });
+  };
+
+  const errorDiv = <small className="text-danger">{error}</small>;
 
   const itemInWishlist = (e) => {
     if (wish) {
@@ -106,7 +136,12 @@ function ViewItem() {
             </div>
             <div className="col-lg-6 col-xl-4 pt-4 order-1 order-lg-2 ms-lg-auto">
               <div className="sticky-top" style={{ top: "100px" }}>
-                <h1 className="mb-4">{item.name}</h1>
+                <h1 className="mb-2">{item.name}</h1>
+                {item.state === 1 ? (
+                  <div className=" badge bg-secondary">Fresh</div>
+                ) : item.state === 2 ? (
+                  <div className="badge bg-dark">Sold out</div>
+                ) : null}
                 <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                   <ul className="list-inline mb-2 mb-sm-0">
                     <li className="list-inline-item h4 fw-light mb-0">
@@ -200,6 +235,55 @@ function ViewItem() {
                     ))}
                   </li>
                 </ul>
+                {authState.isAdmin && (
+                  <>
+                    <div className="row mt-4 pt-4">
+                      <div className="col-sm-6 col-lg-12 detail-option mb-4">
+                        <h6 className="detail-option-heading">Select Status</h6>
+                        <select
+                          className="form-control"
+                          data-style="btn-selectpicker"
+                          onChange={(e) => setSelStatus(e.target.value)}
+                        >
+                          <option></option>
+                          <option></option>
+
+                          {item.state !== 2 && (
+                            <option value="2">Sold out</option>
+                          )}
+                          {item.state !== 0 && (
+                            <option value="0">In Stock</option>
+                          )}
+                        </select>
+                      </div>
+                    </div>
+                    <div className="row text-center">
+                      <div className="col-12">{error ? errorDiv : null}</div>
+                      {updated && (
+                        <div className="col-12 text-success">
+                          <span>
+                            <i className="fa fa-check me-2 "></i> Item Status
+                            Udated
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-grow-1">
+                      <div className="d-grid h-100">
+                        {selectStatus && (
+                          <button
+                            onClick={setStatus}
+                            className="btn btn-dark btn-success w-100 h-100"
+                            type="button"
+                          >
+                            {" "}
+                            Set Status
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>

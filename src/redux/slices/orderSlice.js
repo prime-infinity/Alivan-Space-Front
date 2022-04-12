@@ -23,32 +23,15 @@ export const orderSlice = createSlice({
     changeStatusOfAllOrders: (state, action) => {
       const id = action.payload.id;
       const status = action.payload.status;
-      let array2 = state.allOrder.map((a) => {
+      state.allOrder = state.allOrder.map((a) => {
         var returnValue = { ...a };
 
         if (a._id === id) {
-          returnValue.status = status;
+          returnValue.status = parseInt(status);
         }
 
         return returnValue;
       });
-      console.log(array2);
-      /*console.log(
-        state.allOrder.map((orr) =>
-          orr._id === id ? { ...orr, status: status } : orr
-        )
-      );*/
-      /*state.allOrder =*/ console.log(action.payload);
-
-      /*console.log(
-        state.allOrder.map((element) => {
-          //console.log(element.id);
-          if (element._id === id) {
-            element.status = status;
-          }
-          return element;
-        })
-      );*/
     },
   },
 });

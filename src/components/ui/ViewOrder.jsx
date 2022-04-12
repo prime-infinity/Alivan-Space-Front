@@ -7,14 +7,14 @@ import { changeStatusOfAllOrders } from "../../redux/slices/orderSlice";
 
 function ViewOrder() {
   const dispatch = useDispatch();
+  const { state } = useLocation();
+  const [order, updateOrder] = useState(state.order);
   const authState = useSelector((state) => state.auth.auth);
-  const [selectStatus, setSelStatus] = useState(0);
+  const [selectStatus, setSelStatus] = useState(null);
   const [updated, setUpdated] = useState(false);
   const [error, setErrors] = useState(null);
-
   const discount = 10;
-  const { state } = useLocation();
-  const order = state.order;
+
   const formatDate = (date) => {
     let dat = new Date(date);
     return dat.toLocaleDateString();
@@ -27,13 +27,14 @@ function ViewOrder() {
     //console.log(e);
     setUpdated(true);
     dispatch(changeStatusOfAllOrders(e));
+    updateOrder({ ...order, status: parseInt(selectStatus) });
   };
 
   const errorDiv = <small className="text-danger">{error}</small>;
 
   const setStatus = () => {
-    console.log(selectStatus);
-    console.log(order._id);
+    /*console.log(selectStatus);
+    console.log(order._id);*/
     changeOrderStatus({ id: order._id, status: selectStatus }, authState.token)
       .then((res) => {
         handleSuccess(res);
@@ -92,9 +93,9 @@ function ViewOrder() {
                   <select
                     className="form-control"
                     data-style="btn-selectpicker"
-                    value={selectStatus}
                     onChange={(e) => setSelStatus(e.target.value)}
                   >
+                    <option disabled>Select Status</option>
                     {order.status !== 0 && <option value="0">Received</option>}
                     {order.status !== 1 && (
                       <option value="1">Being prepared</option>
@@ -115,14 +116,16 @@ function ViewOrder() {
               </div>
               <div className="flex-grow-1">
                 <div className="d-grid h-100">
-                  <button
-                    onClick={setStatus}
-                    className="btn btn-dark btn-success w-100 h-100"
-                    type="button"
-                  >
-                    {" "}
-                    Set Status
-                  </button>
+                  {selectStatus && (
+                    <button
+                      onClick={setStatus}
+                      className="btn btn-dark btn-success w-100 h-100"
+                      type="button"
+                    >
+                      {" "}
+                      Set Status
+                    </button>
+                  )}
                 </div>
               </div>
             </>

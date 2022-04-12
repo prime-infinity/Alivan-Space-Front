@@ -1,5 +1,7 @@
+import ShopAll from "../../../views/ShopAll";
+
 function AdminAllItems() {
-  return <div>i am in all items</div>;
+  return <ShopAll />;
 }
 
 export default AdminAllItems;

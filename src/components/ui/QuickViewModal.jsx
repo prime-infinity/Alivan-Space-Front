@@ -137,7 +137,12 @@ function QuickViewModal({ closeModal, item }) {
                   </div>
                 </div>
                 <div className="col-lg-6 p-lg-5">
-                  <h2 className="mb-4 mt-4 mt-lg-1">{item.name}</h2>
+                  <h2 className="mb-2 mt-4 mt-lg-1">{item.name}</h2>
+                  {item.state === 1 ? (
+                    <div className=" badge bg-secondary">Fresh</div>
+                  ) : item.state === 2 ? (
+                    <div className="badge bg-dark">Sold out</div>
+                  ) : null}
                   <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                     <ul className="list-inline mb-2 mb-sm-0">
                       <li className="list-inline-item h4 fw-light mb-0">

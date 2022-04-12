@@ -10,6 +10,7 @@ export const shopSlice = createSlice({
     isUploading: false,
     cart: [],
     wish: null,
+    adminHasUpdatedItem: null,
   },
   reducers: {
     setCategories: (state, action) => {
@@ -39,6 +40,9 @@ export const shopSlice = createSlice({
     setWish: (state, action) => {
       state.wish = action.payload;
     },
+    setAdminHasUpdatedItem: (state, action) => {
+      state.adminHasUpdatedItem = action.payload;
+    },
   },
 });
 //src={car.imagesLocation[0]}
@@ -51,6 +55,7 @@ export const { setWish } = shopSlice.actions;
 export const { removeCart } = shopSlice.actions;
 export const { addToCart } = shopSlice.actions;
 export const { updateNewArrivals } = shopSlice.actions;
+export const { setAdminHasUpdatedItem } = shopSlice.actions;
 
 //the following is called at anypoint where categories component is mounted
 export const getShopCategories = () => async (dispatch) => {

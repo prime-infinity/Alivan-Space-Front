@@ -4,15 +4,35 @@ import { useEffect, useState } from "react";
 import { getAllItems } from "../helpers/auth";
 import Loading from "../components/ui/Loading";
 import NetworkErr from "../components/ui/NetworkErr";
+import { useSelector } from "react-redux";
+import ShopNav from "../components/shop/ShopNav";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function ShopAll() {
+  const adminHasUpdatedItem = useSelector(
+    (state) => state.shop.adminHasUpdatedItem
+  );
   const [allItems, setAllItems] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
+  const [pageNumber, setPageNumber] = useState(0);
+  //setAdminHasUpdatedItem
   useEffect(() => {
     if (allItems === null) {
-      console.log("is getting all items");
+      console.log(`is getting ${pageNumber} items`);
+      getAllItems(pageNumber + 1)
+        .then((res) => {
+          console.log(res);
+          setAllItems(res);
+          setPageNumber(1);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [allItems, pageNumber]);
+
+  useEffect(() => {
+    if (pageNumber !== 0) {
+      console.log(`is getting ${pageNumber} items`);
       getAllItems(pageNumber)
         .then((res) => {
           console.log(res);
@@ -22,17 +42,13 @@ function ShopAll() {
           console.log(err);
         });
     }
-  }, [allItems, pageNumber]);
+  }, [pageNumber, adminHasUpdatedItem]);
 
   const pagePrevious = () => {
-    console.log("is going prev");
     setPageNumber(pageNumber - 1);
-    console.log(pageNumber);
   };
   const pageNext = () => {
     setPageNumber(pageNumber + 1);
-    console.log("is going next");
-    console.log(pageNumber);
   };
 
   return (
@@ -43,14 +59,16 @@ function ShopAll() {
         ) : allItems === "Network Error" ? (
           <NetworkErr />
         ) : allItems.length > 0 ? (
-          <ShopGrid
+          <ShopGrid allItems={allItems} />
+        ) : null}
+        {allItems && (
+          <ShopNav
             allItems={allItems}
             pageNumber={pageNumber}
             pagePrevious={pagePrevious}
             pageNext={pageNext}
           />
-        ) : null}
-
+        )}
         <ShopSide />
       </div>
     </div>
