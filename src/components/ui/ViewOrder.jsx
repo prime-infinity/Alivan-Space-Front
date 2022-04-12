@@ -95,7 +95,8 @@ function ViewOrder() {
                     data-style="btn-selectpicker"
                     onChange={(e) => setSelStatus(e.target.value)}
                   >
-                    <option disabled>Select Status</option>
+                    <option></option>
+                    <option></option>
                     {order.status !== 0 && <option value="0">Received</option>}
                     {order.status !== 1 && (
                       <option value="1">Being prepared</option>

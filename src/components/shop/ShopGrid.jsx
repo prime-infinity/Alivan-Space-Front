@@ -5,8 +5,9 @@ import Item from "../ui/Item";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function ShopGrid({ allItems }) {
   const location = useLocation();
+  //col-xl-9 col-lg-8
   return (
-    <div className="products-grid col-xl-9 col-lg-8 order-lg-2">
+    <div className="products-grid col-12 order-lg-2">
       {/*<!-- Hero Content-->*/}
       {/*<div className="hero-content pb-5">
         <h1>Jackets and tops</h1>

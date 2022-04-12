@@ -244,12 +244,12 @@ function Footer() {
                         </li>
                       )}
 
-                      <li className="mb-2">
+                      {/*<li className="mb-2">
                         {" "}
                         <a className="text-muted text-dark-hover link-animated">
                           Checkouts
                         </a>
-                      </li>
+                      </li>*/}
                     </ul>
                   </div>
                 </div>

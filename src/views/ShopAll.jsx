@@ -1,5 +1,5 @@
 import ShopGrid from "../components/shop/ShopGrid";
-import ShopSide from "../components/shop/ShopSide";
+//import ShopSide from "../components/shop/ShopSide";
 import { useEffect, useState } from "react";
 import { getAllItems } from "../helpers/auth";
 import Loading from "../components/ui/Loading";
@@ -69,7 +69,7 @@ function ShopAll() {
             pageNext={pageNext}
           />
         )}
-        <ShopSide />
+        {/*<ShopSide />*/}
       </div>
     </div>
   );

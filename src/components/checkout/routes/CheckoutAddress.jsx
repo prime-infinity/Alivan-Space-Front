@@ -12,12 +12,14 @@ function CheckoutAddress() {
   const userDetails = useSelector((state) => state.userdetails.details);
 
   const [formData, setFormData] = useState({
-    state: userDetails[1].state,
-    city: userDetails[1].city,
-    street: userDetails[1].street,
+    state: `${userDetails[1].state ? userDetails[1].state : ""}`,
+    city: `${userDetails[1].city ? userDetails[1].city : ""}`,
+    street: `${userDetails[1].street ? userDetails[1].street : ""}`,
     zip: userDetails[1].zip,
-    fullname: `${userDetails[0].firstname} ${userDetails[0].lastname}`,
-    phone: userDetails[0].phone,
+    fullname: `${userDetails[0].firstname ? userDetails[0].firstname : ""} ${
+      userDetails[0].lastname ? userDetails[0].lastname : ""
+    }`,
+    phone: `${userDetails[0].phone ? userDetails[0].phone : ""}`,
     email: authState.email,
   });
 

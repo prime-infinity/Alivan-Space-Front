@@ -93,9 +93,15 @@ function WishItem({ item, index }) {
               <div className="row">
                 <div className="col-6 d-md-none text-muted">Status </div>
                 <div className="col-6 col-md-12 text-end text-md-start">
-                  <div className="badge p-lg-2 badge-primary-light">
-                    In Stock
-                  </div>
+                  {item.state === 1 ? (
+                    <div className="badge p-lg-2 bg-secondary">Fresh</div>
+                  ) : item.state === 2 ? (
+                    <div className="badge p-lg-2 bg-dark">Sold out</div>
+                  ) : (
+                    <div className="badge p-lg-2 badge-primary-light">
+                      In Stock
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

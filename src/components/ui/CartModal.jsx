@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function CartModal() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.shop.cart);
+  const authState = useSelector((state) => state.auth.auth);
 
   const removeFromCart = (index) => {
     dispatch(removeCart(index));
@@ -93,8 +94,11 @@ function CartModal() {
                           <span className="text-muted text-sm">
                             Size: {car.selectSize}
                           </span>
+                          <span className="d-block text-sm">
+                            Price:${car.price}
+                          </span>
                           <strong className="d-block text-sm">
-                            ${car.price * car.quantity}
+                            Total:${car.price * car.quantity}
                           </strong>
                         </div>
                       </div>
@@ -119,16 +123,28 @@ function CartModal() {
                 </h5>
                 <div className="d-grid gap-3">
                   {/*<a className="btn btn-outline-dark">View cart</a>*/}
-                  <Link to="/checkout/address" className="btn btn-dark">
+                  {authState ? (
+                    <Link to="/checkout/address" className="btn btn-dark">
+                      <span
+                        type="button"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        {" "}
+                        Checkout{" "}
+                      </span>
+                    </Link>
+                  ) : (
                     <span
                       type="button"
                       data-bs-dismiss="modal"
                       aria-label="Close"
+                      className="btn btn-warning muted"
                     >
                       {" "}
-                      Checkout{" "}
+                      Login to checkout{" "}
                     </span>
-                  </Link>
+                  )}
                 </div>
               </div>
             </div>

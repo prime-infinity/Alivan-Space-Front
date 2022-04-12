@@ -45,7 +45,7 @@ function AdminPost() {
       price: "",
       description: "",
     });
-    upload.clearPreviewPanel();
+    //upload.clearPreviewPanel();
     //console.log(e);
   };
 
@@ -246,7 +246,7 @@ function AdminPost() {
 
               <div className="mb-3">
                 <label className="form-label" htmlFor="item_description">
-                  Item Description
+                  Item Description (optional)
                 </label>
                 <textarea
                   value={formData.description}

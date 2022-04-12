@@ -235,7 +235,7 @@ function ViewItem() {
                     ))}
                   </li>
                 </ul>
-                {authState.isAdmin && (
+                {authState?.isAdmin && (
                   <>
                     <div className="row mt-4 pt-4">
                       <div className="col-sm-6 col-lg-12 detail-option mb-4">

@@ -107,9 +107,8 @@ function Profile() {
                   <h5>{authState.name}</h5>
                   {userDetails && (
                     <p className="text-muted text-sm mb-0">
-                      {userDetails[1].city
-                        ? `${userDetails[1].city},${userDetails[1].state}`
-                        : null}
+                      {userDetails[1].city ? `${userDetails[1].city}` : null}
+                      {userDetails[1].state && `,${userDetails[1].state}`}
                     </p>
                   )}
                 </div>
@@ -214,28 +213,30 @@ function Profile() {
                       Wishlist
                     </span>
                   </Link>
-                  <Link
-                    to="/admin/orders"
-                    className="list-group-item d-flex justify-content-between align-items-center"
-                  >
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 svg-icon  me-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                      Admin
-                    </span>
-                  </Link>
+                  {authState.isAdmin && (
+                    <Link
+                      to="/admin/orders"
+                      className="list-group-item d-flex justify-content-between align-items-center"
+                    >
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 svg-icon  me-2"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                          />
+                        </svg>
+                        Admin
+                      </span>
+                    </Link>
+                  )}
                   <a
                     className="list-group-item d-flex justify-content-between align-items-center"
                     onClick={logout}
