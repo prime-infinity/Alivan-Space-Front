@@ -23,6 +23,10 @@ export const removeFromLocal = () => {
   localStorage.removeItem("alivanauth");
 };
 
+export const clearCartFromLocal = () => {
+  localStorage.removeItem("alivancart");
+};
+
 export const cartFromLocal = () => {
   try {
     const cartInLocal = localStorage.getItem("alivancart")

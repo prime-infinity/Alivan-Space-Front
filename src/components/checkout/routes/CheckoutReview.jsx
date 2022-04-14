@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { setCart } from "../../../redux/slices/shopSlice";
+import { finalClearCart } from "../../../redux/slices/shopSlice";
 import { placeOrderBack } from "../../../helpers/auth";
 import { useState } from "react";
 import Loading from "../../ui/Loading";
@@ -35,7 +35,7 @@ function CheckoutReview() {
     } else {
       dispatch(updateOrders(e));
     }
-    dispatch(setCart([]));
+    dispatch(finalClearCart());
     navigate("/checkout-confirmed");
   };
 

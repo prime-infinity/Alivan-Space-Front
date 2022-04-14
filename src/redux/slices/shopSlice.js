@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getCategories, getArrivals, getWishFb } from "../../helpers/auth";
-import { cartFromLocal, cartToLocal } from "../../helpers/controlStorage";
+import {
+  cartFromLocal,
+  cartToLocal,
+  clearCartFromLocal,
+} from "../../helpers/controlStorage";
 
 export const shopSlice = createSlice({
   name: "shop",
@@ -77,6 +81,12 @@ export const getCart = () => async (dispatch) => {
 
 export const saveCartToLocal = () => (dispatch, getState) => {
   cartToLocal(getState().shop.cart);
+};
+
+//final clear cart from local and state
+export const finalClearCart = () => (dispatch) => {
+  dispatch(setCart([]));
+  clearCartFromLocal();
 };
 
 export const getWish = (token) => async (dispatch) => {

@@ -119,6 +119,8 @@ function CheckoutAddress() {
               setFormData({ ...formData, state: e.target.value })
             }
           >
+            <option></option>
+            <option></option>
             {us.map(({ name, abbreviation }, index) => (
               <option key={index} value={name}>
                 {name}
