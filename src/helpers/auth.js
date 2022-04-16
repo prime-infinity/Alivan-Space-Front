@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const backendHost = "http://localhost:2000/api/";
-//const backendHost = "https://mighty-hamlet-74113.herokuapp.com/api/";
+//const backendHost = "http://localhost:2000/api/";
+const backendHost = "https://mighty-hamlet-74113.herokuapp.com/api/";
 
 export function login(data) {
   return new Promise((res, rej) => {
