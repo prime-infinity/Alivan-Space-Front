@@ -1,7 +1,7 @@
 import axios from "axios";
 
-//const backendHost = "http://localhost:2000/api/";
-const backendHost = "https://mighty-hamlet-74113.herokuapp.com/api/";
+const backendHost = "http://localhost:2000/api/";
+//const backendHost = "https://mighty-hamlet-74113.herokuapp.com/api/";
 
 export function login(data) {
   return new Promise((res, rej) => {
@@ -239,6 +239,21 @@ export async function getAllItems(pageNumber) {
 
 //order routes
 export function placeOrderBack(data, token) {
+  return new Promise((res, rej) => {
+    axios
+      .post(backendHost + "orders/place_order", data, {
+        headers: { "x-auth-token": token },
+      })
+      .then((result) => {
+        res(result.data);
+      })
+      .catch((err) => {
+        rej(err);
+      });
+  });
+}
+
+export function saveOrderBack(data, token) {
   return new Promise((res, rej) => {
     axios
       .post(backendHost + "orders/save_order", data, {

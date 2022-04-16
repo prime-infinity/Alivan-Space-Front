@@ -4,13 +4,15 @@ import Loading from "../ui/Loading";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserDetail } from "../../redux/slices/userdetailsSlice";
 import { useEffect } from "react";
+import { getOrders } from "../../redux/slices/orderSlice";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Checkout() {
   const authState = useSelector((state) => state.auth.auth);
   const userDetails = useSelector((state) => state.userdetails.details);
   const cart = useSelector((state) => state.shop.cart);
-  const discount = 10;
+  const orders = useSelector((state) => state.order.orders);
+
   const location = useLocation();
   const dispatch = useDispatch();
 
@@ -20,15 +22,19 @@ function Checkout() {
     }
   }, [userDetails, dispatch, authState.token]);
 
+  useEffect(() => {
+    if (orders === null) {
+      dispatch(getOrders(authState.token));
+    }
+  }, [orders, dispatch, authState.token]);
+
   const inAddress = () => {
     return location.pathname === "/checkout/address" ? true : false;
   };
   const inDelivery = () => {
     return location.pathname === "/checkout/delivery" ? true : false;
   };
-  const inPayment = () => {
-    return location.pathname === "/checkout/payment" ? true : false;
-  };
+
   const inReview = () => {
     return location.pathname === "/checkout/review" ? true : false;
   };
@@ -48,8 +54,6 @@ function Checkout() {
                 ? "Shipping Address"
                 : inDelivery()
                 ? "Delivery Method"
-                : inPayment()
-                ? "Payment Method"
                 : inReview()
                 ? "Order Review"
                 : null}{" "}
@@ -62,8 +66,6 @@ function Checkout() {
                 ? "Shipping Address"
                 : inDelivery()
                 ? "Delivery Method"
-                : inPayment()
-                ? "Payment Method"
                 : inReview()
                 ? "Order Review"
                 : null}{" "}
@@ -94,15 +96,7 @@ function Checkout() {
                     Delivery Method
                   </a>
                 </li>
-                <li className="nav-item w-25">
-                  <a
-                    className={`nav-link text-sm text-dark ${
-                      inPayment() ? "active" : "disabled"
-                    } `}
-                  >
-                    Payment Method{" "}
-                  </a>
-                </li>
+
                 <li className="nav-item w-25">
                   <a
                     className={`nav-link text-sm text-dark  ${
@@ -147,13 +141,13 @@ function Checkout() {
                           )}
                         </td>
                       </tr>
-                      <tr>
+                      {/*<tr>
                         <th className="py-4">Shipping and handling</th>
                         <td className="py-4 text-end text-muted">
                           {" "}
                           ${discount}.00
                         </td>
-                      </tr>
+                      </tr>*/}
                       {/*<tr>
                         <th className="py-4">Tax</th>
                         <td className="py-4 text-end text-muted">$0.00</td>
@@ -166,7 +160,7 @@ function Checkout() {
                             (accumulator, ele) =>
                               accumulator + ele.price * ele.quantity,
                             0
-                          ) + discount}
+                          )}
                         </td>
                       </tr>
                     </tbody>

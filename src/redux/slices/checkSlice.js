@@ -5,7 +5,6 @@ export const checkSlice = createSlice({
   initialState: {
     address: null,
     delivery: null,
-    payment: null,
   },
   reducers: {
     setAddress: (state, action) => {
@@ -14,14 +13,10 @@ export const checkSlice = createSlice({
     setDelivery: (state, action) => {
       state.delivery = action.payload;
     },
-    setPayment: (state, action) => {
-      state.payment = action.payload;
-    },
   },
 });
 
 export const { setAddress } = checkSlice.actions;
 export const { setDelivery } = checkSlice.actions;
-export const { setPayment } = checkSlice.actions;
 
 export default checkSlice.reducer;

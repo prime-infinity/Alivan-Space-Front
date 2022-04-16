@@ -14,7 +14,7 @@ function CheckoutDelivery() {
   };
 
   const proceed = () => {
-    navigate("/checkout/payment");
+    navigate("/checkout/review");
   };
 
   return (
@@ -82,7 +82,7 @@ function CheckoutDelivery() {
           className="btn btn-dark"
           href="checkout3.html"
         >
-          Choose payment method<i className="fa fa-angle-right ms-2"></i>
+          Order review and payment<i className="fa fa-angle-right ms-2"></i>
         </button>
       </div>
     </>

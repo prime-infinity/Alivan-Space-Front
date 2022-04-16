@@ -29,7 +29,6 @@ import Checkout from "./components/checkout/Checkout";
 import OrderConfirmed from "./components/checkout/OrderConfirmed";
 import CheckoutAddress from "./components/checkout/routes/CheckoutAddress";
 import CheckoutDelivery from "./components/checkout/routes/CheckoutDelivery";
-import CheckoutPayment from "./components/checkout/routes/CheckoutPayment";
 import CheckoutReview from "./components/checkout/routes/CheckoutReview";
 
 import ViewOrder from "./components/ui/ViewOrder";
@@ -96,7 +95,6 @@ function App() {
           <Route index element={<CheckoutAddress />} />
           <Route path="address" element={<CheckoutAddress />} />
           <Route path="delivery" element={<CheckoutDelivery />} />
-          <Route path="payment" element={<CheckoutPayment />} />
           <Route path="review" element={<CheckoutReview />} />
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Route>
